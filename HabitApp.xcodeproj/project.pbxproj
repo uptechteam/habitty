@@ -48,6 +48,7 @@
 		FDD58888224528DB006B5B3B /* morning_exercise.png in Resources */ = {isa = PBXBuildFile; fileRef = FDD58886224528DB006B5B3B /* morning_exercise.png */; };
 		FDD58889224528DB006B5B3B /* water.png in Resources */ = {isa = PBXBuildFile; fileRef = FDD58887224528DB006B5B3B /* water.png */; };
 		FDD5888B22453177006B5B3B /* styles.css in Resources */ = {isa = PBXBuildFile; fileRef = FDD5888A22453177006B5B3B /* styles.css */; };
+		FDD588932245673E006B5B3B /* 70-percent.png in Resources */ = {isa = PBXBuildFile; fileRef = FDD588922245673E006B5B3B /* 70-percent.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 		FDD58886224528DB006B5B3B /* morning_exercise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = morning_exercise.png; sourceTree = "<group>"; };
 		FDD58887224528DB006B5B3B /* water.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water.png; sourceTree = "<group>"; };
 		FDD5888A22453177006B5B3B /* styles.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = styles.css; sourceTree = "<group>"; };
+		FDD588922245673E006B5B3B /* 70-percent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "70-percent.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 		6A94099E2244E5E2005C67A1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FDD588922245673E006B5B3B /* 70-percent.png */,
 				6AEF65E122455E610079D571 /* fasting_clock.png */,
 				6AEF65DF22455D600079D571 /* dinner_time.jpg */,
 				6AEF65D722455B240079D571 /* marc.jpg */,
@@ -339,6 +342,7 @@
 				6A9409AA2244EF77005C67A1 /* ListViewController.storyboard in Resources */,
 				1322FA7222453C6C00401A98 /* data.json in Resources */,
 				6AEF65E022455D610079D571 /* dinner_time.jpg in Resources */,
+				FDD588932245673E006B5B3B /* 70-percent.png in Resources */,
 				6AEF65D422455A190079D571 /* warren.jpg in Resources */,
 				6A9409A62244EC63005C67A1 /* PreviewView.xib in Resources */,
 				FDD58889224528DB006B5B3B /* water.png in Resources */,

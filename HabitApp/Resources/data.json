@@ -21,6 +21,13 @@
                 "value": "https://www.everydayhealth.com/news/unusual-signs-of-dehydration/"
             },
             {
+                "type": "image",
+                "value": {
+                    "name": "70-percent.png",
+                    "description": "The amount of water in the human body ranges from 50-75%. The average adult human body is 50-65% water, averaging around 57-60%. The percentage of water in infants is much higher, typically around 75-78% water, dropping to 65% by one year of age."
+                }
+            },
+            {
                 "type": "text",
                 "value": "## 3. Your energy levels will increase\nExperts have stated even mild dehydration can make you tired and reduce your energy levels. Due to an inadequate water supply, your body compensates by decreasing blood circulation. This, in turn, can slow down the process of getting oxygen to your muscles.<br>And this is why it is all the more important to stay hydrated through an intense workout or on a particularly hot day when you are likely to lose water via sweat. If you are prone to involuntary muscle contractions or cramps, try to increase your water intake."
             },
@@ -43,13 +50,6 @@
             {
                 "type": "link",
                 "value": "https://www.rd.com/health/diet-weight-loss/drinking-enough-water/"
-            },
-            {
-                "type": "image",
-                "value": {
-                    "name": "water.png",
-                    "description": "Something something"
-                }
             }
         ]
     },
