@@ -31,7 +31,7 @@ final class PreviewView: UIView {
     }
 
     func set(topInset: CGFloat) {
-        titleTopConstraint.constant = max(topInset, 16)
+        titleTopConstraint.constant = max(topInset, 12)
     }
 
     func set(preferredTextWidth: CGFloat) {

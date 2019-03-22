@@ -20,7 +20,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="287"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hS8-0b-3t7">
-                    <rect key="frame" x="16" y="16" width="500" height="29"/>
+                    <rect key="frame" x="16" y="12" width="500" height="29"/>
                     <constraints>
                         <constraint firstAttribute="width" priority="999" constant="500" id="0O2-1S-wDZ"/>
                     </constraints>
@@ -29,7 +29,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xbg-Yu-LIu">
-                    <rect key="frame" x="16" y="251.5" width="343" height="19.5"/>
+                    <rect key="frame" x="16" y="255.5" width="343" height="19.5"/>
                     <constraints>
                         <constraint firstAttribute="width" priority="999" constant="500" id="Dkc-jm-S5S"/>
                     </constraints>
@@ -42,8 +42,8 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="OHz-Jp-OZS" secondAttribute="bottom" id="0BX-5k-TBx"/>
                 <constraint firstItem="OHz-Jp-OZS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="7Xq-k8-ab2"/>
-                <constraint firstAttribute="bottom" secondItem="Xbg-Yu-LIu" secondAttribute="bottom" constant="16" id="VlS-A4-XyO"/>
-                <constraint firstItem="hS8-0b-3t7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" priority="999" constant="16" id="X6m-Vr-s11"/>
+                <constraint firstAttribute="bottom" secondItem="Xbg-Yu-LIu" secondAttribute="bottom" constant="12" id="VlS-A4-XyO"/>
+                <constraint firstItem="hS8-0b-3t7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" priority="999" constant="12" id="X6m-Vr-s11"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Xbg-Yu-LIu" secondAttribute="trailing" constant="16" id="Z05-zp-hnf"/>
                 <constraint firstItem="hS8-0b-3t7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="cSO-nf-YhX"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="OHz-Jp-OZS" secondAttribute="trailing" id="kLz-NV-ia0"/>

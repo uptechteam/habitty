@@ -160,10 +160,11 @@ class DetailsTableViewController: UIViewController, UITableViewDelegate, UITable
             let cell = tableView.dequeueReusableCell(withIdentifier: "TextCell", for: indexPath)
             cell.textLabel?.numberOfLines = 0
             cell.textLabel?.attributedText = text
+            cell.selectionStyle = .none
             return cell
 
         case .link(let link):
-            let cell = tableView.dequeueReusableCell(withIdentifier: "LinkCell", for: indexPath) as! LinkPreviewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LinkPreviewCell", for: indexPath) as! LinkPreviewCell
             cell.configure(with: link.absoluteString, tapHandler: self.open)
             return cell
 

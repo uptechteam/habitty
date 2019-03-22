@@ -36,6 +36,8 @@ final class ListViewController: UIViewController {
         tableView.rowHeight = 400
         tableView.delegate = self
         tableView.dataSource = self
+
+        setupHeaderView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -51,6 +53,40 @@ final class ListViewController: UIViewController {
         super.viewDidDisappear(animated)
 
         willAppear = false
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+    }
+
+    private func setupHeaderView() {
+        let headerView = UIView()
+        headerView.frame = CGRect(x: 0, y: 0, width: 0, height: 200)
+        tableView.tableHeaderView = headerView
+
+        let welcomeLabel = UILabel()
+        welcomeLabel.text = "Hi there!"
+        welcomeLabel.textAlignment = .center
+        welcomeLabel.font = UIFont.systemFont(ofSize: 32, weight: UIFont.Weight.heavy)
+        welcomeLabel.textColor = UIColor(red:0.10, green:0.10, blue:0.10, alpha:1.0)
+
+        let callToActionLabel = UILabel()
+        callToActionLabel.text = "Let's find you a new habit"
+        callToActionLabel.textAlignment = .center
+        callToActionLabel.font = UIFont.systemFont(ofSize: 26, weight: UIFont.Weight.bold)
+        callToActionLabel.textColor = UIColor(red:0.20, green:0.20, blue:0.20, alpha:1.0)
+
+        let labelStackView = UIStackView(arrangedSubviews: [welcomeLabel, callToActionLabel])
+        labelStackView.axis = .vertical
+        labelStackView.spacing = 8
+
+        labelStackView.translatesAutoresizingMaskIntoConstraints = false
+        headerView.addSubview(labelStackView)
+        NSLayoutConstraint.activate([
+            labelStackView.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
+            labelStackView.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
+            labelStackView.widthAnchor.constraint(equalTo: headerView.widthAnchor, constant: -32)
+        ])
     }
 }
 
