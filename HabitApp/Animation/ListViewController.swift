@@ -13,9 +13,19 @@ final class ListViewController: UIViewController {
         return UIStoryboard(name: "ListViewController", bundle: nil).instantiateInitialViewController() as! ListViewController
     }
 
-    @IBOutlet private var tableView: UITableView!
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return .slide
+    }
 
+    override var prefersStatusBarHidden: Bool {
+        return !willAppear
+    }
+
+    @IBOutlet private var tableView: UITableView!
+    @IBOutlet private var underView: UIView!
+    
     private var selectedCellIndexPath: IndexPath?
+    private var willAppear = false
 
     private let items = ViewItem.mockItems()
 
@@ -26,6 +36,25 @@ final class ListViewController: UIViewController {
         tableView.rowHeight = 400
         tableView.delegate = self
         tableView.dataSource = self
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        willAppear = true
+        UIView.animate(withDuration: 0.6, delay: 0, options: .curveEaseInOut, animations: {
+            self.setNeedsStatusBarAppearanceUpdate()
+        }, completion: nil)
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+
+        willAppear = false
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
     }
 }
 
@@ -54,6 +83,15 @@ extension ListViewController: UITableViewDelegate {
         viewController.transitioningDelegate = self
         present(viewController, animated: true, completion: nil)
     }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let cell = cell as? ListCell else {
+            return
+        }
+
+        cell.previewView.set(preferredTextWidth: preferredTextWidth)
+        cell.previewView.set(imageInsets: previewImageInsets)
+    }
 }
 
 extension ListViewController: UIViewControllerTransitioningDelegate {
@@ -72,12 +110,42 @@ extension ListViewController: PreviewAnimatedTransitioningViewController {
             return .zero
         }
 
-        let frame1 = tableView.convert(cell.previewContainerView.frame, from: tableView)
+        let frame1 = tableView.convert(cell.previewContainerView.frame, from: cell)
         let frame2 = self.view.convert(frame1, from: tableView)
         return frame2
     }
 
     var previewViewItem: ViewItem? {
         return selectedCellIndexPath.map { items[$0.row] }
+    }
+
+    var previewTopInset: CGFloat {
+        return 0
+    }
+
+    var previewCornerRadius: CGFloat {
+        return 16
+    }
+
+    var preferredTextWidth: CGFloat {
+        return view.frame.width - 32 * 2
+    }
+
+    var previewImageInsets: UIEdgeInsets {
+        return UIEdgeInsets(top: -view.safeAreaInsets.top, left: -16, bottom: 0, right: -16)
+    }
+
+    func set(preferredTextWidth: CGFloat) { }
+
+    func showPreviewView(on: Bool) {
+        guard let indexPath = selectedCellIndexPath, let cell = tableView.cellForRow(at: indexPath) as? ListCell else {
+            return
+        }
+
+        cell.previewView.alpha = on ? 1 : 0
+
+        if previewViewFrame.intersects(underView.frame) {
+            underView.alpha = on ? 1 : 0
+        }
     }
 }

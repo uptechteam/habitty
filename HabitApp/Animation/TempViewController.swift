@@ -11,8 +11,14 @@ import UIKit
 final class TempViewController: UIViewController {
     let previewView = PreviewView.makeNibInstance()
 
+    private var willAppear = false
+
     override var prefersStatusBarHidden: Bool {
-        return true
+        return willAppear
+    }
+
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return .slide
     }
 
     override func viewDidLoad() {
@@ -21,6 +27,7 @@ final class TempViewController: UIViewController {
         view.backgroundColor = UIColor.white
 
         previewView.translatesAutoresizingMaskIntoConstraints = false
+        previewView.set(imageInsets: previewImageInsets)
         view.addSubview(previewView)
         view.addConstraints([
             previewView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -37,10 +44,19 @@ final class TempViewController: UIViewController {
         )
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        willAppear = true
+        UIView.animate(withDuration: 0.6, delay: 0, options: .curveEaseInOut, animations: {
+            self.setNeedsStatusBarAppearanceUpdate()
+        }, completion: nil)
+    }
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
-        previewView.set(safeAreaTopLength: view.safeAreaInsets.top)
+        previewView.set(topInset: view.safeAreaInsets.top)
     }
 
     @objc private func handleTap() {
@@ -55,5 +71,29 @@ extension TempViewController: PreviewAnimatedTransitioningViewController {
 
     var previewViewItem: ViewItem? {
         return previewView.viewItem
+    }
+
+    var previewTopInset: CGFloat {
+        return view.safeAreaInsets.top
+    }
+
+    var previewCornerRadius: CGFloat {
+        return 0
+    }
+
+    var preferredTextWidth: CGFloat {
+        return previewView.frame.width - 16 * 2
+    }
+
+    var previewImageInsets: UIEdgeInsets {
+        return .zero
+    }
+
+    func set(preferredTextWidth: CGFloat) {
+        previewView.set(preferredTextWidth: preferredTextWidth)
+    }
+
+    func showPreviewView(on: Bool) {
+        previewView.alpha = on ? 1 : 0
     }
 }

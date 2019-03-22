@@ -17,6 +17,12 @@ final class PreviewView: UIView {
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var descriptionLabel: UILabel!
     @IBOutlet private var titleTopConstraint: NSLayoutConstraint!
+    @IBOutlet private var titleWidthConstraint: NSLayoutConstraint!
+    @IBOutlet private var descriptionWidthConstraint: NSLayoutConstraint!
+    @IBOutlet private var imageTopConstraint: NSLayoutConstraint!
+    @IBOutlet private var imageLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet private var imageBottomConstraint: NSLayoutConstraint!
+    @IBOutlet private var imageTrailingConstraint: NSLayoutConstraint!
 
     private(set) var viewItem: ViewItem?
     
@@ -24,8 +30,13 @@ final class PreviewView: UIView {
         super.awakeFromNib()
     }
 
-    func set(safeAreaTopLength: CGFloat) {
-        titleTopConstraint.constant = safeAreaTopLength + 16
+    func set(topInset: CGFloat) {
+        titleTopConstraint.constant = max(topInset, 16)
+    }
+
+    func set(preferredTextWidth: CGFloat) {
+        titleWidthConstraint.constant = preferredTextWidth
+        descriptionWidthConstraint.constant = preferredTextWidth
     }
 
     func set(viewItem: ViewItem) {
@@ -33,5 +44,12 @@ final class PreviewView: UIView {
         imageView.image = UIImage(named: viewItem.imageName)
         titleLabel.text = viewItem.name
         descriptionLabel.text = viewItem.shortDescription
+    }
+
+    func set(imageInsets: UIEdgeInsets) {
+        imageTopConstraint.constant = imageInsets.top
+        imageLeadingConstraint.constant = imageInsets.left
+        imageTrailingConstraint.constant = imageInsets.right
+        imageBottomConstraint.constant = imageInsets.bottom
     }
 }

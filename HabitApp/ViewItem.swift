@@ -32,7 +32,7 @@ extension ViewItem {
     static func mockItems() -> [ViewItem] {
         return [
             ViewItem(
-                name: "Healthy Guy",
+                name: "Healthy Guy Healthy Guy Healthy Guy Healthy Guy",
                 imageName: "jedi.jpg",
                 shortDescription: "Healthy Guy is even more healthy",
                 description: [

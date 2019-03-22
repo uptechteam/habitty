@@ -22,10 +22,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OKz-hB-coT">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="OKz-hB-coT" secondAttribute="trailing" id="9Pl-mA-kc3"/>
+                            <constraint firstItem="OKz-hB-coT" firstAttribute="top" secondItem="rf2-DD-uYu" secondAttribute="top" id="AdI-k6-4bB"/>
+                            <constraint firstItem="OKz-hB-coT" firstAttribute="leading" secondItem="rf2-DD-uYu" secondAttribute="leading" id="fln-9U-7hG"/>
                             <constraint firstItem="ryg-sJ-2Qe" firstAttribute="top" secondItem="rf2-DD-uYu" secondAttribute="top" id="lVO-ja-T8B"/>
+                            <constraint firstItem="vt0-gu-bOp" firstAttribute="top" secondItem="OKz-hB-coT" secondAttribute="bottom" id="ldX-rY-WZC"/>
                             <constraint firstItem="vt0-gu-bOp" firstAttribute="trailing" secondItem="ryg-sJ-2Qe" secondAttribute="trailing" id="oN7-ZQ-aBa"/>
                             <constraint firstItem="ryg-sJ-2Qe" firstAttribute="leading" secondItem="vt0-gu-bOp" secondAttribute="leading" id="ogV-tM-Exe"/>
                             <constraint firstItem="ryg-sJ-2Qe" firstAttribute="bottom" secondItem="rf2-DD-uYu" secondAttribute="bottom" id="sqg-OD-zgP"/>
@@ -34,6 +42,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="ryg-sJ-2Qe" id="yhf-0o-9DI"/>
+                        <outlet property="underView" destination="OKz-hB-coT" id="Ohm-ga-RK2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RVi-Rx-QtD" userLabel="First Responder" sceneMemberID="firstResponder"/>
