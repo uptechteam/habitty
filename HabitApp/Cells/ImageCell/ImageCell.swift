@@ -11,10 +11,16 @@ import UIKit
 class ImageCell: UITableViewCell {
 
     @IBOutlet weak var cellImageView: UIImageView!
+    @IBOutlet weak var labelContainer: UIView!
     @IBOutlet weak var label: UILabel!
 
-    func setup(image: UIImage, text: String) {
+    func setup(image: UIImage, text: String?) {
         cellImageView.image = image
-        label.text = text
+        if let text = text, !text.isEmpty {
+            labelContainer.isHidden = false
+            label.text = text
+        } else {
+            labelContainer.isHidden = true
+        }
     }
 }

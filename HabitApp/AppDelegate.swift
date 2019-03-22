@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        let listViewController = ListViewController.makeStoryboardInstance()
+        let listViewController = DetailsTableViewController.makeStoryboardInstance()
 
         let window = UIWindow()
         window.rootViewController = listViewController
@@ -25,4 +25,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 }
-

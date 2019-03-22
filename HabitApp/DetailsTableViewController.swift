@@ -162,10 +162,10 @@ class DetailsTableViewController: UIViewController, UITableViewDelegate, UITable
             cell.textLabel?.attributedText = text
             return cell
 
-        case .links(let title, let links):
-            let linkPreviewCell = tableView.dequeueReusableCell(withIdentifier: "LinkPreviewCell", for: indexPath) as! LinkPreviewCell
-            linkPreviewCell.configure(with: "https://itunes.apple.com/ua/app/the-sims-mobile/id1144258115?mt=8", tapHandler: self.open)
-            return linkPreviewCell
+        case .link(let link):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LinkCell", for: indexPath) as! LinkPreviewCell
+            cell.configure(with: link.absoluteString, tapHandler: self.open)
+            return cell
 
         case .image(let imageName, let description):
             let cell = tableView.dequeueReusableCell(withIdentifier: "ImageCell", for: indexPath) as! ImageCell
@@ -176,7 +176,7 @@ class DetailsTableViewController: UIViewController, UITableViewDelegate, UITable
             let cell = tableView.dequeueReusableCell(withIdentifier: "CelebrityCell", for: indexPath) as! CelebrityCell
             var celebritiesParam: [(ViewItem.Celebrity, () -> Void)] = []
             for celebrity in celebrities {
-                celebritiesParam.append((celebrity, { self.open(url: celebrity.link) }))
+                celebritiesParam.append((celebrity, { self.open(url: celebrity.url) }))
             }
             cell.setup(title: title, celebrities: celebritiesParam)
             return cell
