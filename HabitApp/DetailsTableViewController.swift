@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Down
+import SafariServices
 
 class DetailsTableViewController: UITableViewController {
+    var item: ViewItem? = ViewItem.mockItems()[0]
 
     static func getInstance() -> DetailsTableViewController {
         let storyboard = UIStoryboard(name: "DetailsTableViewController", bundle: nil)
@@ -18,9 +21,17 @@ class DetailsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setup()
+    }
+
+    private func setup() {
         tableView.register(
             UINib(nibName: "ImageCell", bundle: nil),
             forCellReuseIdentifier: "ImageCell"
+        )
+        tableView.register(
+            UINib(nibName: "CelebrityCell", bundle: nil),
+            forCellReuseIdentifier: "CelebrityCell"
         )
         tableView.register(
             UINib(nibName: "LinkPreviewCell", bundle: nil),
@@ -37,40 +48,70 @@ class DetailsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        guard let item = self.item else {
+            fatalError()
+        }
+
+        return item.description.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
-        case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ImageCell") as! ImageCell
-            cell.setup(image: UIImage(named: "johnny_cage.jpg")!, text: "This is Johnny and he is healthy. This is Johnny and he is. This is Johnny.")
-            return cell
-        case 1:
-            let text = NSAttributedString(
-                string: "Hey hey hey yo",
-                attributes: [NSAttributedString.Key.foregroundColor: UIColor.red]
-            )
-            let cell = UITableViewCell()
-            cell.textLabel?.attributedText = text
-            return cell
-        case 2:
-            let text = NSAttributedString(
-                string: "Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was po",
-                attributes: [NSAttributedString.Key.foregroundColor: UIColor.red]
-            )
-            let cell = UITableViewCell()
-            cell.textLabel?.numberOfLines = 0
-            cell.textLabel?.attributedText = text
-            return cell
-        case 3:
-            let linkPreviewCell = tableView.dequeueReusableCell(withIdentifier: "LinkPreviewCell") as! LinkPreviewCell
-            linkPreviewCell.configure(with: "https://itunes.apple.com/ua/app/the-sims-mobile/id1144258115?mt=8")
-            return linkPreviewCell
-        default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ImageCell") as! ImageCell
-            cell.setup(image: UIImage(named: "johnny_cage.jpg")!, text: "This is Johnny and he is healthy.")
-            return cell
+        guard let item = self.item else {
+            fatalError()
         }
+
+        return cell(for: item.description[indexPath.row])
+    }
+
+    private func cell(for description: ViewItem.DescriptionItem) -> UITableViewCell {
+        switch description {
+        case .text(let text):
+            return getTextCell(text: text)
+
+        case .links(let title, let links):
+            return getLinkCell(link: links.first ?? URL(string: "https://itunes.apple.com/ua/app/the-sims-mobile/id1144258115?mt=8")!)
+
+        case .image(let imageName, let description):
+            return getImageCell(image: imageName, description: description)
+
+        case .celebrities(let title, let celebrities):
+            return makeCelebritiesCell(title: title, celebrities: celebrities)
+        }
+    }
+
+    private func getTextCell(text: String) -> UITableViewCell {
+        let down = Down(markdownString: text)
+        let text = try! down.toAttributedString(stylesheet: css)
+
+        let cell = UITableViewCell()
+        cell.textLabel?.numberOfLines = 0
+        cell.textLabel?.attributedText = text
+        return cell
+    }
+
+    private func getImageCell(image: String, description: String?) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ImageCell") as! ImageCell
+        cell.setup(image: UIImage(named: image)!, text: description ?? "")
+        return cell
+    }
+
+    private func getLinkCell(link: URL) -> UITableViewCell {
+        let linkPreviewCell = tableView.dequeueReusableCell(withIdentifier: "LinkPreviewCell") as! LinkPreviewCell
+        linkPreviewCell.configure(with: "https://itunes.apple.com/ua/app/the-sims-mobile/id1144258115?mt=8")
+        return linkPreviewCell
+    }
+
+    private func makeCelebritiesCell(title: String, celebrities: [ViewItem.Celebrity]) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CelebrityCell") as! CelebrityCell
+        let openUrl: (URL) -> Void = { url in
+            let controller = SFSafariViewController(url: url)
+            self.present(controller, animated: true, completion: nil)
+        }
+        var celebritiesParam: [(ViewItem.Celebrity, () -> Void)] = []
+        for celebrity in celebrities {
+            celebritiesParam.append((celebrity, { openUrl(celebrity.link) }))
+        }
+        cell.setup(title: title, celebrities: celebritiesParam)
+        return cell
     }
 }

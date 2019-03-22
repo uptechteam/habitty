@@ -40,7 +40,7 @@ extension ViewItem {
                     .image(name: "healthy_guy.jpg", description: "123"),
                     .image(name: "healthy_guy.jpg", description: nil),
                     .links(title: "Links", links: [URL(string: "https://google.com")!]),
-                    .celebrities(title: "Healthy guys", celebrities: [Celebrity(name: "Johnny Cage", imageName: "johnny_cage.jpg", link: URL(string: "https://google.com")!)])
+                    .celebrities(title: "Healthy guys", celebrities: [Celebrity(name: "Johnny Cage", imageName: "johnny_cage.jpg", link: URL(string: "https://google.com")!),Celebrity(name: "Johnny Cage", imageName: "johnny_cage.jpg", link: URL(string: "https://google.com")!),Celebrity(name: "Johnny Cage", imageName: "johnny_cage.jpg", link: URL(string: "https://google.com")!),Celebrity(name: "Johnny Cage", imageName: "johnny_cage.jpg", link: URL(string: "https://google.com")!),Celebrity(name: "Johnny Cage", imageName: "johnny_cage.jpg", link: URL(string: "https://google.com")!),Celebrity(name: "Johnny Cage", imageName: "johnny_cage.jpg", link: URL(string: "https://google.com")!)])
                 ]
             ),
             ViewItem(
@@ -75,4 +75,10 @@ private let mockText = """
 # Welcome to StackEdit!
 
 Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about StackEdit, you can read me. If you want to play with Markdown, you can edit me. Once you have finished with me, you can create new files by opening the **file explorer** on the left corner of the navigation bar
+"""
+
+let css =  """
+h1 {
+color: #7595de
+}
 """
