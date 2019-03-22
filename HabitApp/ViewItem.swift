@@ -24,6 +24,7 @@ struct ViewItem {
 
     var name: String
     var imageName: String
+    var isImageLight: Bool
     var shortDescription: String
     var description: [DescriptionItem]
 }
@@ -34,6 +35,7 @@ extension ViewItem {
             ViewItem(
                 name: "Healthy Guy Healthy Guy Healthy Guy Healthy Guy",
                 imageName: "jedi.jpg",
+                isImageLight: false,
                 shortDescription: "Healthy Guy is even more healthy",
                 description: [
                     .text(mockText),
@@ -46,6 +48,7 @@ extension ViewItem {
             ViewItem(
                 name: "Healthy Guy",
                 imageName: "jedi.jpg",
+                isImageLight: false,
                 shortDescription: "Healthy Guy is even more healthy",
                 description: [
                     .text(mockText),
@@ -58,6 +61,7 @@ extension ViewItem {
             ViewItem(
                 name: "Healthy Guy",
                 imageName: "healthy_guy.jpg",
+                isImageLight: true,
                 shortDescription: "Healthy Guy is even more healthy",
                 description: [
                     .text(mockText),

@@ -43,7 +43,9 @@ final class PreviewView: UIView {
         self.viewItem = viewItem
         imageView.image = UIImage(named: viewItem.imageName)
         titleLabel.text = viewItem.name
+        titleLabel.textColor = viewItem.isImageLight ? UIColor.darkText : .white
         descriptionLabel.text = viewItem.shortDescription
+        descriptionLabel.textColor = viewItem.isImageLight ? UIColor.darkText : .white
     }
 
     func set(imageInsets: UIEdgeInsets) {
