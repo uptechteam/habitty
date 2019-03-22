@@ -41,6 +41,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1322FA512244EB3A00401A98 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1322FA552244EB7E00401A98 /* ImageCell */,
+				1322FA542244EB6800401A98 /* LinkPreviewCell */,
+				1322FA522244EB5300401A98 /* TextCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		1322FA522244EB5300401A98 /* TextCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TextCell;
+			sourceTree = "<group>";
+		};
+		1322FA542244EB6800401A98 /* LinkPreviewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LinkPreviewCell;
+			sourceTree = "<group>";
+		};
+		1322FA552244EB7E00401A98 /* ImageCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ImageCell;
+			sourceTree = "<group>";
+		};
 		6A94099B2244E191005C67A1 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +107,7 @@
 		FD1A45DA2244DC4C004ABA4B /* HabitApp */ = {
 			isa = PBXGroup;
 			children = (
+				1322FA512244EB3A00401A98 /* Cells */,
 				6A94099E2244E5E2005C67A1 /* Resources */,
 				6A94099B2244E191005C67A1 /* Animation */,
 				FD1A45DB2244DC4C004ABA4B /* AppDelegate.swift */,
