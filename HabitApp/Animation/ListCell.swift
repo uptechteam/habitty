@@ -24,8 +24,14 @@ final class ListCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        previewContainerView.clipsToBounds = true
-        previewContainerView.layer.cornerRadius = 16
+        previewContainerView.layer.shadowColor = UIColor.black.cgColor
+        previewContainerView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        previewContainerView.layer.shadowOpacity = 0.2
+        previewContainerView.layer.shadowRadius = 8
+        previewContainerView.backgroundColor = .clear
+
+        previewView.clipsToBounds = true
+        previewView.layer.cornerRadius = 16
 
         previewView.translatesAutoresizingMaskIntoConstraints = false
         previewContainerView.addSubview(previewView)

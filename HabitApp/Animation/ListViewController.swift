@@ -36,6 +36,7 @@ final class ListViewController: UIViewController {
         tableView.rowHeight = 400
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.clipsToBounds = false
 
         setupHeaderView()
     }
