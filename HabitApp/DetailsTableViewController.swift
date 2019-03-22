@@ -70,7 +70,8 @@ class DetailsTableViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
-        previewView.set(topInset: view.safeAreaInsets.top)
+        previewView.set(topInset: previewTopInset)
+        tableView.contentInset.bottom = view.safeAreaInsets.bottom
     }
 
     private func setup() {
@@ -227,7 +228,7 @@ extension DetailsTableViewController: PreviewAnimatedTransitioningViewController
     }
 
     var previewTopInset: CGFloat {
-        return view.safeAreaInsets.top
+        return view.safeAreaInsets.top + 4
     }
 
     var previewCornerRadius: CGFloat {

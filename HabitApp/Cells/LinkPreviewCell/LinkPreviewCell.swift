@@ -21,6 +21,7 @@ class LinkPreviewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
+        selectionStyle = .none
         UIView.animate(
             withDuration: 0.6,
             delay: 0,

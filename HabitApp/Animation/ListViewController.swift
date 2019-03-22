@@ -56,10 +56,6 @@ final class ListViewController: UIViewController {
         willAppear = false
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-    }
-
     private func setupHeaderView() {
         let headerView = UIView()
         headerView.frame = CGRect(x: 0, y: 0, width: 0, height: 200)
