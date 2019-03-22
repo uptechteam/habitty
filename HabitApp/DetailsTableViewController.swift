@@ -55,6 +55,14 @@ class DetailsTableViewController: UIViewController, UITableViewDelegate, UITable
         }, completion: nil)
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        UIView.animate(withDuration: 0.2) {
+            self.closeButton.alpha = 1
+        }
+    }
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
@@ -104,6 +112,7 @@ class DetailsTableViewController: UIViewController, UITableViewDelegate, UITable
         closeButton.setImage(#imageLiteral(resourceName: "close_white"), for: .normal)
         closeButton.addTarget(self, action: #selector(DetailsTableViewController.handleCloseTap), for: .touchUpInside)
         closeButton.layer.zPosition = 100000
+        closeButton.alpha = 0
         view.addSubview(closeButton)
         view.addConstraints([
             closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
@@ -204,7 +213,12 @@ class DetailsTableViewController: UIViewController, UITableViewDelegate, UITable
     }
 
     @objc private func handleCloseTap() {
-        presentingViewController?.dismiss(animated: true, completion: nil)
+        UIView.animate(withDuration: 0.2, animations: {
+            self.closeButton.alpha = 0
+
+        }) { [weak self] _ in
+            self?.presentingViewController?.dismiss(animated: true, completion: nil)
+        }
     }
 }
 
