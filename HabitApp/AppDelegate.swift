@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        let listViewController = DetailsTableViewController.makeStoryboardInstance()
+        let listViewController = ListViewController.makeStoryboardInstance()
 
         let window = UIWindow()
         window.rootViewController = listViewController
