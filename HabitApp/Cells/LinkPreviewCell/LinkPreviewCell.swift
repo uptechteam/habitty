@@ -14,16 +14,41 @@ class LinkPreviewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var detailLabel: UILabel!
 
+    private lazy var views: [UIView] = [previewImageView, titleLabel, detailLabel]
+
+    @IBOutlet weak var placeholderView: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
+        views.forEach { $0.alpha = 0 }
+
+        UIView.animate(
+            withDuration: 0.6,
+            delay: 0,
+            options: [UIView.AnimationOptions.autoreverse, UIView.AnimationOptions.repeat],
+            animations: {
+                self.placeholderView.alpha = 0.6
+            }
+        )
     }
 
-    func configure(with linkPreview: LinkPreview) {
-        previewImageView.image = linkPreview.image
-        titleLabel.text = linkPreview.title
-        detailLabel.text = linkPreview.detail
+    func configure(with urlString: String) {
+        LinkPreviewService.shared.makeLinkPreview(from: urlString) { [weak self] linkPreview in
+            guard let linkPreview = linkPreview else { return }
+
+            self?.placeholderView.isHidden = true
+
+            self?.previewImageView.image = linkPreview.image
+            self?.titleLabel.text = linkPreview.title
+            self?.detailLabel.text = linkPreview.detail
+
+            UIView.animate(withDuration: 0.3, animations: {
+                self?.placeholderView.alpha = 0
+                self?.views.forEach { $0.alpha = 1 }
+            })
+        }
     }
 
 }
+

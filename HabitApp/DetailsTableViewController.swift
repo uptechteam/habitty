@@ -22,9 +22,14 @@ class DetailsTableViewController: UITableViewController {
             UINib(nibName: "ImageCell", bundle: nil),
             forCellReuseIdentifier: "ImageCell"
         )
+        tableView.register(
+            UINib(nibName: "LinkPreviewCell", bundle: nil),
+            forCellReuseIdentifier: "LinkPreviewCell"
+        )
 
         tableView.dataSource = self
         tableView.separatorStyle = .none
+
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -58,6 +63,10 @@ class DetailsTableViewController: UITableViewController {
             cell.textLabel?.numberOfLines = 0
             cell.textLabel?.attributedText = text
             return cell
+        case 3:
+            let linkPreviewCell = tableView.dequeueReusableCell(withIdentifier: "LinkPreviewCell") as! LinkPreviewCell
+            linkPreviewCell.configure(with: "https://itunes.apple.com/ua/app/the-sims-mobile/id1144258115?mt=8")
+            return linkPreviewCell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ImageCell") as! ImageCell
             cell.setup(image: UIImage(named: "johnny_cage.jpg")!, text: "This is Johnny and he is healthy.")
