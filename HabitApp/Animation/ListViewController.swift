@@ -78,7 +78,7 @@ extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedCellIndexPath = indexPath
 
-        let vc = DetailsTableViewController.getInstance()
+        let vc = DetailsTableViewController.makeStoryboardInstance()
         vc.set(item: items[indexPath.row])
         vc.transitioningDelegate = self
         present(vc, animated: true, completion: nil)
