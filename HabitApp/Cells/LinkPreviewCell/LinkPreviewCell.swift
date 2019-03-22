@@ -31,13 +31,21 @@ class LinkPreviewCell: UITableViewCell {
                 self.placeholderView.alpha = 0.6
             }
         )
+
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        contentView.addGestureRecognizer(tap)
+        contentView.isUserInteractionEnabled = false
+
     }
 
+    var url: URL!
     func configure(with urlString: String) {
+        url = URL(string: urlString)!
         LinkPreviewService.shared.makeLinkPreview(from: urlString) { [weak self] linkPreview in
             guard let linkPreview = linkPreview else { return }
 
             self?.placeholderView.isHidden = true
+            self?.contentView.isUserInteractionEnabled = true
 
             self?.previewImageView.image = linkPreview.image
             self?.titleLabel.text = linkPreview.title
@@ -48,6 +56,10 @@ class LinkPreviewCell: UITableViewCell {
                 self?.views.forEach { $0.alpha = 1 }
             })
         }
+    }
+
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+        UIApplication.shared.open(url)
     }
 
 }
