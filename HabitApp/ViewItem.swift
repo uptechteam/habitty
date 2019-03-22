@@ -18,7 +18,7 @@ struct ViewItem {
     enum DescriptionItem {
         case text(String)
         case links(title: String?, links: [URL])
-        case image(name: String)
+        case image(name: String, description: String?)
         case celebrities(title: String, celebrities: [Celebrity])
     }
 
@@ -37,7 +37,8 @@ extension ViewItem {
                 shortDescription: "Healthy Guy is even more healthy",
                 description: [
                     .text(mockText),
-                    .image(name: "healthy_guy.jpg"),
+                    .image(name: "healthy_guy.jpg", description: "123"),
+                    .image(name: "healthy_guy.jpg", description: nil),
                     .links(title: "Links", links: [URL(string: "https://google.com")!]),
                     .celebrities(title: "Healthy guys", celebrities: [Celebrity(name: "Johnny Cage", imageName: "johnny_cage.jpg", link: URL(string: "https://google.com")!)])
                 ]
@@ -48,7 +49,8 @@ extension ViewItem {
                 shortDescription: "Healthy Guy is even more healthy",
                 description: [
                     .text(mockText),
-                    .image(name: "healthy_guy.jpg"),
+                    .image(name: "healthy_guy.jpg", description: "123"),
+                    .image(name: "healthy_guy.jpg", description: nil),
                     .links(title: "Links", links: [URL(string: "https://google.com")!]),
                     .celebrities(title: "Healthy guys", celebrities: [Celebrity(name: "Johnny Cage", imageName: "johnny_cage.jpg", link: URL(string: "https://google.com")!)])
                 ]
@@ -59,7 +61,8 @@ extension ViewItem {
                 shortDescription: "Healthy Guy is even more healthy",
                 description: [
                     .text(mockText),
-                    .image(name: "healthy_guy.jpg"),
+                    .image(name: "healthy_guy.jpg", description: "123"),
+                    .image(name: "healthy_guy.jpg", description: nil),
                     .links(title: "Links", links: [URL(string: "https://google.com")!]),
                     .celebrities(title: "Healthy guys", celebrities: [Celebrity(name: "Johnny Cage", imageName: "johnny_cage.jpg", link: URL(string: "https://google.com")!)])
                 ]

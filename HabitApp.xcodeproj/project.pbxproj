@@ -11,6 +11,7 @@
 		1322FA5D2244ED5600401A98 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1322FA5C2244ED5600401A98 /* ImageCell.xib */; };
 		1322FA5F2244EFD300401A98 /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1322FA5E2244EFD300401A98 /* DetailsTableViewController.swift */; };
 		1322FA622244F00400401A98 /* DetailsTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1322FA612244F00400401A98 /* DetailsTableViewController.storyboard */; };
+		14DA1D7C6E3B923E09EBE77D /* Pods_HabitApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529B6ACB2F965D32D7CACB02 /* Pods_HabitApp.framework */; };
 		6A94099D2244E1E9005C67A1 /* ViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A94099C2244E1E9005C67A1 /* ViewItem.swift */; };
 		6A9409A02244E5F2005C67A1 /* healthy_guy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6A94099F2244E5F2005C67A1 /* healthy_guy.jpg */; };
 		6A9409A22244E972005C67A1 /* johnny_cage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6A9409A12244E972005C67A1 /* johnny_cage.jpg */; };
@@ -26,9 +27,12 @@
 		1322FA5C2244ED5600401A98 /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
 		1322FA5E2244EFD300401A98 /* DetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewController.swift; sourceTree = "<group>"; };
 		1322FA612244F00400401A98 /* DetailsTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsTableViewController.storyboard; sourceTree = "<group>"; };
+		529B6ACB2F965D32D7CACB02 /* Pods_HabitApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HabitApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A94099C2244E1E9005C67A1 /* ViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewItem.swift; sourceTree = "<group>"; };
 		6A94099F2244E5F2005C67A1 /* healthy_guy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = healthy_guy.jpg; sourceTree = "<group>"; };
 		6A9409A12244E972005C67A1 /* johnny_cage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = johnny_cage.jpg; sourceTree = "<group>"; };
+		D0EE1A7D7CE741A9C90185A5 /* Pods-HabitApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HabitApp/Pods-HabitApp.debug.xcconfig"; sourceTree = "<group>"; };
+		FCA5CCB5B5A514E5CE439E5D /* Pods-HabitApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-HabitApp/Pods-HabitApp.release.xcconfig"; sourceTree = "<group>"; };
 		FD1A45D82244DC4C004ABA4B /* HabitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD1A45DB2244DC4C004ABA4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD1A45DD2244DC4C004ABA4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14DA1D7C6E3B923E09EBE77D /* Pods_HabitApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +79,14 @@
 			path = ImageCell;
 			sourceTree = "<group>";
 		};
+		291BA4451F25979B5BB9A8CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				529B6ACB2F965D32D7CACB02 /* Pods_HabitApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6A94099B2244E191005C67A1 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,11 +103,22 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		CBEDF68F9ADED8F144D8209A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D0EE1A7D7CE741A9C90185A5 /* Pods-HabitApp.debug.xcconfig */,
+				FCA5CCB5B5A514E5CE439E5D /* Pods-HabitApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FD1A45CF2244DC4C004ABA4B = {
 			isa = PBXGroup;
 			children = (
 				FD1A45DA2244DC4C004ABA4B /* HabitApp */,
 				FD1A45D92244DC4C004ABA4B /* Products */,
+				CBEDF68F9ADED8F144D8209A /* Pods */,
+				291BA4451F25979B5BB9A8CD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,9 +156,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD1A45EA2244DC4E004ABA4B /* Build configuration list for PBXNativeTarget "HabitApp" */;
 			buildPhases = (
+				422FD46C979B3575B5A83AAC /* [CP] Check Pods Manifest.lock */,
 				FD1A45D42244DC4C004ABA4B /* Sources */,
 				FD1A45D52244DC4C004ABA4B /* Frameworks */,
 				FD1A45D62244DC4C004ABA4B /* Resources */,
+				F6BB4DADCC8975D50CA02D4C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -194,6 +220,55 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		422FD46C979B3575B5A83AAC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HabitApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6BB4DADCC8975D50CA02D4C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HabitApp/Pods-HabitApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Down/Down.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftLinkPreview/SwiftLinkPreview.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Down.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLinkPreview.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HabitApp/Pods-HabitApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FD1A45D42244DC4C004ABA4B /* Sources */ = {
@@ -348,6 +423,7 @@
 		};
 		FD1A45EB2244DC4E004ABA4B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0EE1A7D7CE741A9C90185A5 /* Pods-HabitApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -366,6 +442,7 @@
 		};
 		FD1A45EC2244DC4E004ABA4B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCA5CCB5B5A514E5CE439E5D /* Pods-HabitApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
