@@ -27,7 +27,7 @@ final class ListViewController: UIViewController {
     private var selectedCellIndexPath: IndexPath?
     private var willAppear = false
 
-    private let items = ViewItem.mockItems()
+    private let items = DataProvider.getData()
 
     override func viewDidLoad() {
         super.viewDidLoad()
