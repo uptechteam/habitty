@@ -10,6 +10,8 @@
 		6A94099D2244E1E9005C67A1 /* ViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A94099C2244E1E9005C67A1 /* ViewItem.swift */; };
 		6A9409A02244E5F2005C67A1 /* healthy_guy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6A94099F2244E5F2005C67A1 /* healthy_guy.jpg */; };
 		6A9409A22244E972005C67A1 /* johnny_cage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6A9409A12244E972005C67A1 /* johnny_cage.jpg */; };
+		6A9409A42244EC51005C67A1 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9409A32244EC51005C67A1 /* PreviewView.swift */; };
+		6A9409A62244EC63005C67A1 /* PreviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A9409A52244EC63005C67A1 /* PreviewView.xib */; };
 		FD1A45DC2244DC4C004ABA4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1A45DB2244DC4C004ABA4B /* AppDelegate.swift */; };
 		FD1A45DE2244DC4C004ABA4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1A45DD2244DC4C004ABA4B /* ViewController.swift */; };
 		FD1A45E12244DC4C004ABA4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD1A45DF2244DC4C004ABA4B /* Main.storyboard */; };
@@ -21,6 +23,8 @@
 		6A94099C2244E1E9005C67A1 /* ViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewItem.swift; sourceTree = "<group>"; };
 		6A94099F2244E5F2005C67A1 /* healthy_guy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = healthy_guy.jpg; sourceTree = "<group>"; };
 		6A9409A12244E972005C67A1 /* johnny_cage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = johnny_cage.jpg; sourceTree = "<group>"; };
+		6A9409A32244EC51005C67A1 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		6A9409A52244EC63005C67A1 /* PreviewView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreviewView.xib; sourceTree = "<group>"; };
 		FD1A45D82244DC4C004ABA4B /* HabitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD1A45DB2244DC4C004ABA4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD1A45DD2244DC4C004ABA4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 		6A94099B2244E191005C67A1 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
+				6A9409A32244EC51005C67A1 /* PreviewView.swift */,
+				6A9409A52244EC63005C67A1 /* PreviewView.xib */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -184,6 +190,7 @@
 				FD1A45E32244DC4E004ABA4B /* Assets.xcassets in Resources */,
 				6A9409A22244E972005C67A1 /* johnny_cage.jpg in Resources */,
 				FD1A45E12244DC4C004ABA4B /* Main.storyboard in Resources */,
+				6A9409A62244EC63005C67A1 /* PreviewView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A94099D2244E1E9005C67A1 /* ViewItem.swift in Sources */,
+				6A9409A42244EC51005C67A1 /* PreviewView.swift in Sources */,
 				FD1A45DE2244DC4C004ABA4B /* ViewController.swift in Sources */,
 				FD1A45DC2244DC4C004ABA4B /* AppDelegate.swift in Sources */,
 			);
