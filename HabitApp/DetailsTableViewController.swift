@@ -11,7 +11,18 @@ import Down
 import SafariServices
 
 class DetailsTableViewController: UITableViewController {
-    var item: ViewItem? = ViewItem.mockItems()[0]
+    private let previewContainerView = UIView()
+    private let previewView = PreviewView.makeNibInstance()
+    private var item: ViewItem!
+    private var willAppear = false
+
+    override var prefersStatusBarHidden: Bool {
+        return willAppear
+    }
+
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return .slide
+    }
 
     static func getInstance() -> DetailsTableViewController {
         let storyboard = UIStoryboard(name: "DetailsTableViewController", bundle: nil)
@@ -22,6 +33,21 @@ class DetailsTableViewController: UITableViewController {
         super.viewDidLoad()
 
         setup()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        willAppear = true
+        UIView.animate(withDuration: 0.6, delay: 0, options: .curveEaseInOut, animations: {
+            self.setNeedsStatusBarAppearanceUpdate()
+        }, completion: nil)
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        previewView.set(topInset: view.safeAreaInsets.top)
     }
 
     private func setup() {
@@ -37,10 +63,26 @@ class DetailsTableViewController: UITableViewController {
             UINib(nibName: "LinkPreviewCell", bundle: nil),
             forCellReuseIdentifier: "LinkPreviewCell"
         )
-
+        tableView.contentInsetAdjustmentBehavior = .never
         tableView.dataSource = self
         tableView.separatorStyle = .none
 
+        previewContainerView.frame = CGRect(x: 0, y: 0, width: 0, height: 400)
+        tableView.tableHeaderView = previewContainerView
+
+        previewView.translatesAutoresizingMaskIntoConstraints = false
+        previewContainerView.addSubview(previewView)
+        previewContainerView.addConstraints([
+            previewView.leadingAnchor.constraint(equalTo: previewContainerView.leadingAnchor),
+            previewView.trailingAnchor.constraint(equalTo: previewContainerView.trailingAnchor),
+            previewView.topAnchor.constraint(equalTo: previewContainerView.topAnchor),
+            previewView.bottomAnchor.constraint(equalTo: previewContainerView.bottomAnchor)
+        ])
+    }
+
+    func set(item: ViewItem) {
+        previewView.set(viewItem: item)
+        self.item = item
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -61,6 +103,11 @@ class DetailsTableViewController: UITableViewController {
         }
 
         return cell(for: item.description[indexPath.row])
+    }
+
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        previewView.transform = CGAffineTransform.identity
+            .translatedBy(x: 0, y: min(0, scrollView.contentOffset.y - tableView.contentInset.top))
     }
 
     private func cell(for description: ViewItem.DescriptionItem) -> UITableViewCell {
@@ -113,5 +160,39 @@ class DetailsTableViewController: UITableViewController {
         }
         cell.setup(title: title, celebrities: celebritiesParam)
         return cell
+    }
+}
+
+extension DetailsTableViewController: PreviewAnimatedTransitioningViewController {
+    var previewViewFrame: CGRect {
+        return previewView.frame
+    }
+
+    var previewViewItem: ViewItem? {
+        return previewView.viewItem
+    }
+
+    var previewTopInset: CGFloat {
+        return view.safeAreaInsets.top
+    }
+
+    var previewCornerRadius: CGFloat {
+        return 0
+    }
+
+    var preferredTextWidth: CGFloat {
+        return previewView.frame.width - 16 * 2
+    }
+
+    var previewImageInsets: UIEdgeInsets {
+        return .zero
+    }
+
+    func set(preferredTextWidth: CGFloat) {
+        previewView.set(preferredTextWidth: preferredTextWidth)
+    }
+
+    func showPreviewView(on: Bool) {
+        previewView.alpha = on ? 1 : 0
     }
 }
