@@ -105,5 +105,38 @@
             }
         }
         ]
+    },
+    {
+        "name": "Intermittent fasting",
+        "imageName": "dinner_time.jpg",
+        "isImageLight": true,
+        "shortDescription": "Intermittent fasting might be an ancient secret of health",
+        "description": [{
+            "type": "text",
+            "value": "It is ancient because it has been practiced throughout all of human history. It’s a secret because this potentially powerful habit had until recently in many ways been virtually forgotten.\n\nHowever, many people are now re-discovering this dietary intervention. Since 2010, the number of online searches for “intermittent fasting” has increased by about 10,000 percent, with most of the increase happening in the last few years.\n\nIntermittent fasting might provide huge benefits if it is done right, including loss of excess weight, reversal of type 2 diabetes and many other things. Plus, it can save you time and money.\n# What is intermittent fasting?\nFasting, on the other hand, is the voluntary withholding of food for spiritual, health, or other reasons. It’s done by someone who is not underweight and thus has enough stored body fat to live off. Intermittent fasting done right should not cause suffering, and certainly never death.\n\nFood is easily available, but you choose not to eat it. This can be for any period of time, from a few hours up to a few days or – with medical supervision – even weeks on end. You may begin a fast at any time of your choosing, and you may end a fast at will, too. You can start or stop a fast for any reason or no reason at all."
+        },
+        {
+            "type": "image",
+            "value": {
+                "name": "fasting_clock.png"
+            }
+        },
+        {
+            "type": "text",
+            "value": "Fasting has no standard duration, as it is merely the absence of eating. Anytime that you are not eating, you are intermittently fasting. For example, you may fast between dinner and breakfast the next day, a period of approximately 12-14 hours. In that sense, intermittent fasting should be considered a part of everyday life.Consider the term “break fast”. This refers to the meal that breaks your fast – which is done daily. Rather than being some sort of cruel and unusual punishment, the English language implicitly acknowledges that fasting should be performed daily, even if only for a short duration.\n\nIntermittent fasting is not something queer and curious, but a part of everyday, normal life. It is perhaps the oldest and most powerful dietary intervention imaginable. Yet somehow we have missed its power and overlooked its therapeutic potential.\n\nLearning how to fast properly gives us the option of using it or not."
+        },
+        {
+            "type": "link",
+            "value": "https://en.wikipedia.org/wiki/Intermittent_fasting"
+        },
+        {
+            "type": "link",
+            "value": "https://www.dietdoctor.com/intermittent-fasting"
+        },
+        {
+            "type": "link",
+            "value": "https://lifeapps.io/fasting/the-5-stages-of-intermittent-fasting/"
+        }
+        ]
     }
 ]

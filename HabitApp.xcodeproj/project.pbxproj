@@ -35,6 +35,8 @@
 		6AEF65D422455A190079D571 /* warren.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6AEF65D322455A190079D571 /* warren.jpg */; };
 		6AEF65D622455AC60079D571 /* musk.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6AEF65D522455AC60079D571 /* musk.jpg */; };
 		6AEF65D822455B240079D571 /* marc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6AEF65D722455B240079D571 /* marc.jpg */; };
+		6AEF65E022455D610079D571 /* dinner_time.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6AEF65DF22455D600079D571 /* dinner_time.jpg */; };
+		6AEF65E222455E610079D571 /* fasting_clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AEF65E122455E610079D571 /* fasting_clock.png */; };
 		FD1A45DC2244DC4C004ABA4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1A45DB2244DC4C004ABA4B /* AppDelegate.swift */; };
 		FD1A45DE2244DC4C004ABA4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1A45DD2244DC4C004ABA4B /* ViewController.swift */; };
 		FD1A45E32244DC4E004ABA4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD1A45E22244DC4E004ABA4B /* Assets.xcassets */; };
@@ -77,6 +79,8 @@
 		6AEF65D322455A190079D571 /* warren.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = warren.jpg; sourceTree = "<group>"; };
 		6AEF65D522455AC60079D571 /* musk.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = musk.jpg; sourceTree = "<group>"; };
 		6AEF65D722455B240079D571 /* marc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = marc.jpg; sourceTree = "<group>"; };
+		6AEF65DF22455D600079D571 /* dinner_time.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dinner_time.jpg; sourceTree = "<group>"; };
+		6AEF65E122455E610079D571 /* fasting_clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fasting_clock.png; sourceTree = "<group>"; };
 		D0EE1A7D7CE741A9C90185A5 /* Pods-HabitApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HabitApp/Pods-HabitApp.debug.xcconfig"; sourceTree = "<group>"; };
 		FCA5CCB5B5A514E5CE439E5D /* Pods-HabitApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-HabitApp/Pods-HabitApp.release.xcconfig"; sourceTree = "<group>"; };
 		FD1A45D82244DC4C004ABA4B /* HabitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +165,8 @@
 		6A94099E2244E5E2005C67A1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6AEF65E122455E610079D571 /* fasting_clock.png */,
+				6AEF65DF22455D600079D571 /* dinner_time.jpg */,
 				6AEF65D722455B240079D571 /* marc.jpg */,
 				6AEF65D522455AC60079D571 /* musk.jpg */,
 				6AEF65D322455A190079D571 /* warren.jpg */,
@@ -327,10 +333,12 @@
 				6AEF65CE224551320079D571 /* finance_tracking.png in Resources */,
 				FDD588812244F8E0006B5B3B /* LinkPreviewCell.xib in Resources */,
 				1322FA6A2245058000401A98 /* CelebrityCell.xib in Resources */,
+				6AEF65E222455E610079D571 /* fasting_clock.png in Resources */,
 				FD1A45E32244DC4E004ABA4B /* Assets.xcassets in Resources */,
 				6A9409A22244E972005C67A1 /* johnny_cage.jpg in Resources */,
 				6A9409AA2244EF77005C67A1 /* ListViewController.storyboard in Resources */,
 				1322FA7222453C6C00401A98 /* data.json in Resources */,
+				6AEF65E022455D610079D571 /* dinner_time.jpg in Resources */,
 				6AEF65D422455A190079D571 /* warren.jpg in Resources */,
 				6A9409A62244EC63005C67A1 /* PreviewView.xib in Resources */,
 				FDD58889224528DB006B5B3B /* water.png in Resources */,
