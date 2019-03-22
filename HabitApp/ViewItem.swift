@@ -33,7 +33,7 @@ extension ViewItem {
         return [
             ViewItem(
                 name: "Healthy Guy",
-                imageName: "healthy_guy.jpg",
+                imageName: "jedi.jpg",
                 shortDescription: "Healthy Guy is even more healthy",
                 description: [
                     .text(mockText),
@@ -45,7 +45,7 @@ extension ViewItem {
             ),
             ViewItem(
                 name: "Healthy Guy",
-                imageName: "healthy_guy.jpg",
+                imageName: "jedi.jpg",
                 shortDescription: "Healthy Guy is even more healthy",
                 description: [
                     .text(mockText),

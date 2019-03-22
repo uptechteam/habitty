@@ -16,8 +16,19 @@ final class PreviewView: UIView {
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var descriptionLabel: UILabel!
-
+    @IBOutlet private var titleTopConstraint: NSLayoutConstraint!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+
+    func set(safeAreaTopLength: CGFloat) {
+        titleTopConstraint.constant = safeAreaTopLength + 16
+    }
+
+    func set(viewItem: ViewItem) {
+        imageView.image = UIImage(named: viewItem.imageName)
+        titleLabel.text = viewItem.name
+        descriptionLabel.text = viewItem.shortDescription
     }
 }
