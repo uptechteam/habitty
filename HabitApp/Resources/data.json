@@ -2,6 +2,7 @@
     {
         "name": "Drinking Enough Water",
         "imageName": "water.png",
+        "isImageLight": true,
         "shortDescription": "Drinking Enough Water Changes Your Body In These 5 Ways",
         "description": [{
                 "type": "text",

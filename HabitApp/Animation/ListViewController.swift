@@ -78,10 +78,10 @@ extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedCellIndexPath = indexPath
 
-        let viewController = TempViewController(nibName: nil, bundle: nil)
-        viewController.previewView.set(viewItem: items[indexPath.row])
-        viewController.transitioningDelegate = self
-        present(viewController, animated: true, completion: nil)
+        let vc = DetailsTableViewController.makeStoryboardInstance()
+        vc.set(item: items[indexPath.row])
+        vc.transitioningDelegate = self
+        present(vc, animated: true, completion: nil)
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

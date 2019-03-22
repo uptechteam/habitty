@@ -24,6 +24,7 @@ struct ViewItem {
 
     var name: String
     var imageName: String
+    var isImageLight: Bool
     var shortDescription: String
     var description: [DescriptionItem]
 }
@@ -34,6 +35,7 @@ extension ViewItem {
             ViewItem(
                 name: "Healthy Guy Healthy Guy Healthy Guy Healthy Guy",
                 imageName: "jedi.jpg",
+                isImageLight: false,
                 shortDescription: "Healthy Guy is even more healthy",
                 description: [
                     .text(mockText),
@@ -46,6 +48,7 @@ extension ViewItem {
             ViewItem(
                 name: "Healthy Guy",
                 imageName: "jedi.jpg",
+                isImageLight: false,
                 shortDescription: "Healthy Guy is even more healthy",
                 description: [
                     .text(mockText),
@@ -58,6 +61,7 @@ extension ViewItem {
             ViewItem(
                 name: "Healthy Guy",
                 imageName: "healthy_guy.jpg",
+                isImageLight: true,
                 shortDescription: "Healthy Guy is even more healthy",
                 description: [
                     .text(mockText),
@@ -75,10 +79,4 @@ private let mockText = """
 # Welcome to StackEdit!
 
 Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about StackEdit, you can read me. If you want to play with Markdown, you can edit me. Once you have finished with me, you can create new files by opening the **file explorer** on the left corner of the navigation bar
-"""
-
-let css =  """
-h1 {
-color: #7595de
-}
 """

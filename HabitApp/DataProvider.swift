@@ -17,6 +17,7 @@ class DataProvider {
                 return ViewItem(
                     name: item.name,
                     imageName: item.imageName,
+                    isImageLight: item.isImageLight,
                     shortDescription: item.shortDescription,
                     description: item.description.map { description in
                         switch description {

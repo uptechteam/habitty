@@ -56,6 +56,7 @@ struct Item: Codable {
 
     let name: String
     let imageName: String
+    let isImageLight: Bool
     let shortDescription: String
     let description: [DescriptionItem]
 }
