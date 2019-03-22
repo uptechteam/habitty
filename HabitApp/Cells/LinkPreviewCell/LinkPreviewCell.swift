@@ -21,8 +21,6 @@ class LinkPreviewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        views.forEach { $0.alpha = 0 }
-
         UIView.animate(
             withDuration: 0.6,
             delay: 0,
@@ -34,19 +32,21 @@ class LinkPreviewCell: UITableViewCell {
 
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         contentView.addGestureRecognizer(tap)
-        contentView.isUserInteractionEnabled = false
-
     }
 
     var url: URL!
     var tapHandler: ((URL) -> Void)?
     func configure(with urlString: String, tapHandler: @escaping (URL) -> Void) {
+        contentView.isUserInteractionEnabled = false
+        views.forEach { $0.alpha = 0 }
+        placeholderView.alpha = 1
+
         url = URL(string: urlString)!
         self.tapHandler = tapHandler
+
         LinkPreviewService.shared.makeLinkPreview(from: urlString) { [weak self] linkPreview in
             guard let linkPreview = linkPreview else { return }
 
-            self?.placeholderView.isHidden = true
             self?.contentView.isUserInteractionEnabled = true
 
             self?.previewImageView.image = linkPreview.image

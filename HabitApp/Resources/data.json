@@ -6,34 +6,49 @@
         "shortDescription": "Drinking Enough Water Changes Your Body In These 5 Ways",
         "description": [{
                 "type": "text",
-                "value": "Drinking enough water is important for the proper functioning of your body. Dehydration, caused by insufficient fluid intake, often results in noticeable changes to let you know that you should be reaching for a glass. <br><br>While the \"8 glasses a day\" rule is popular, the ideal intake level actually varies based on the individual. Here are five changes you can expect to see once you start the daily habit of drinking enough water:<br>**1. The color of your urine changes**"
+                "value": "Drinking enough water is important for the proper functioning of your body. Dehydration, caused by insufficient fluid intake, often results in noticeable changes to let you know that you should be reaching for a glass. <br>While the *\"8 glasses a day\"* rule is popular, the ideal intake level actually varies based on the individual. Here are five changes you can expect to see once you start the daily habit of drinking enough water:\n## 1. The color of your urine changes\nUrine color is a good indicator of whether you are drinking enough water on a daily basis. A very pale shade of yellow is good news, suggesting that your intake of water is at a healthy level.<br>Regular yellow or a dark shade of yellow are signs that your body is feeling dehydrated. If your urine is transparent and has no color at all, you may be drinking too much water and should try to reduce your intake."
             },
             {
                 "type": "link",
                 "value": "https://www.mayoclinic.org/diseases-conditions/urine-color/symptoms-causes/syc-20367333"
             },
             {
+                "type": "text",
+                "value": "## 2. Your body stops craving empty calories\nSometimes, our body misinterprets thirst as a sign of hunger, said Dr. John Higgins, a professor at the University of Texas. \"When you’re dehydrated, it can be difficult for organs like the liver, which uses water, to release [stored glucose] and other components of your energy stores, so you can actually get cravings for food.<br>Typically, craving for sweets is a sign that the body is having a hard time trying to break down glycogen. Drinking enough water and consuming fruits through the day can help ease the process and regulate your appetite.\""
+            },
+            {
+                "type": "link",
+                "value": "https://www.everydayhealth.com/news/unusual-signs-of-dehydration/"
+            },
+            {
+                "type": "text",
+                "value": "## 3. Your energy levels will increase\nExperts have stated even mild dehydration can make you tired and reduce your energy levels. Due to an inadequate water supply, your body compensates by decreasing blood circulation. This, in turn, can slow down the process of getting oxygen to your muscles.<br>And this is why it is all the more important to stay hydrated through an intense workout or on a particularly hot day when you are likely to lose water via sweat. If you are prone to involuntary muscle contractions or cramps, try to increase your water intake."
+            },
+            {
+                "type": "link",
+                "value": "https://www.streetdirectory.com/travel_guide/25746/food_and_drink/why_drinking_water_helps_maintain_your_energy_levels.html"
+            },
+            {
+                "type": "text",
+                "value": "## 4. Your brain power will get a boost\nAlso, the benefit may not be exclusive to physical energy. Studies have suggested mild dehydration could also impair mental performance, potentially affecting your daily productivity.<br>\"[Even] a minor degree of dehydration can disrupt brain functioning,\" said Professor David Benton from Swansea University, England.<br>His research highlighted how the habit of drinking enough water should be taught to children who spend most of their days in the classroom."
+            },
+            {
+                "type": "link",
+                "value": "https://theconversation.com/memory-and-attention-are-affected-by-much-lower-levels-of-dehydration-than-previously-thought-63950"
+            },
+            {
+                "type": "text",
+                "value": "## 5. Your bowel movements will be regulated\nIf you have been experiencing constipation, chances are your H2O intake is too low. Apart from ensuring that you consume enough sources of dietary fiber, the most effective way to improve your bowel movement is to drink enough water.<br>\"People who drink enough water usually have regular bowel movements. Hard bowel movements or constipation can be a sign that you aren’t getting enough water,\" said Dr. Ronald Navarro, orthopedic and sport medicine surgeon at Kaiser Permanente South Bay Medical Center."
+            },
+            {
+                "type": "link",
+                "value": "https://www.rd.com/health/diet-weight-loss/drinking-enough-water/"
+            },
+            {
                 "type": "image",
                 "value": {
                     "name": "water.png",
                     "description": "Something something"
-                }
-            },
-            {
-                "type": "celebrities",
-                "value": {
-                    "title": "Who does this?",
-                    "celebrities": [{
-                        "name": "Celeb Guy",
-                        "imageName": "water.png",
-                        "url": "https://www.mayoclinic.org/diseases-conditions/urine-color/symptoms-causes/syc-20367333"
-                    },
-                    {
-                        "name": "Celeb Guy",
-                        "imageName": "water.png",
-                        "url": "https://www.mayoclinic.org/diseases-conditions/urine-color/symptoms-causes/syc-20367333"
-                    }
-                ]
                 }
             }
         ]
