@@ -52,7 +52,7 @@
                             <constraint firstAttribute="trailing" secondItem="O5p-ca-cZT" secondAttribute="trailing" constant="16" id="oJR-KI-pMh"/>
                         </constraints>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oMy-vz-7BA">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oMy-vz-7BA">
                         <rect key="frame" x="16" y="21" width="64" height="64"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="64" id="bdV-Hj-Hrc"/>
