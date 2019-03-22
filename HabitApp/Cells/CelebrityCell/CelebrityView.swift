@@ -15,7 +15,7 @@ class CelebrityView: UIView {
 
     private var tap: (() -> Void)?
 
-    static func getInstance() -> CelebrityView {
+    static func makeNibInstance() -> CelebrityView {
         let nib = UINib(nibName: "CelebrityView", bundle: nil)
         return nib.instantiate(withOwner: nil, options: nil).first as! CelebrityView
     }

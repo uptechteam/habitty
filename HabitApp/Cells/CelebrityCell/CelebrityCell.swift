@@ -22,7 +22,7 @@ class CelebrityCell: UITableViewCell {
         }
 
         for (celebrity, tapHandler) in celebrities {
-            let view = CelebrityView.getInstance()
+            let view = CelebrityView.makeNibInstance()
             view.setup(
                 image: UIImage(named: celebrity.imageName)!,
                 title: celebrity.name,

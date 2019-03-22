@@ -13,7 +13,7 @@ import SafariServices
 class DetailsTableViewController: UITableViewController {
     var item: ViewItem? = ViewItem.mockItems()[0]
 
-    static func getInstance() -> DetailsTableViewController {
+    static func makeStoryboardInstance() -> DetailsTableViewController {
         let storyboard = UIStoryboard(name: "DetailsTableViewController", bundle: nil)
         return storyboard.instantiateInitialViewController() as! DetailsTableViewController
     }
@@ -97,21 +97,22 @@ class DetailsTableViewController: UITableViewController {
 
     private func getLinkCell(link: URL) -> UITableViewCell {
         let linkPreviewCell = tableView.dequeueReusableCell(withIdentifier: "LinkPreviewCell") as! LinkPreviewCell
-        linkPreviewCell.configure(with: "https://itunes.apple.com/ua/app/the-sims-mobile/id1144258115?mt=8")
+        linkPreviewCell.configure(with: "https://itunes.apple.com/ua/app/the-sims-mobile/id1144258115?mt=8", tapHandler: self.open)
         return linkPreviewCell
     }
 
     private func makeCelebritiesCell(title: String, celebrities: [ViewItem.Celebrity]) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CelebrityCell") as! CelebrityCell
-        let openUrl: (URL) -> Void = { url in
-            let controller = SFSafariViewController(url: url)
-            self.present(controller, animated: true, completion: nil)
-        }
         var celebritiesParam: [(ViewItem.Celebrity, () -> Void)] = []
         for celebrity in celebrities {
-            celebritiesParam.append((celebrity, { openUrl(celebrity.link) }))
+            celebritiesParam.append((celebrity, { self.open(url: celebrity.link) }))
         }
         cell.setup(title: title, celebrities: celebritiesParam)
         return cell
+    }
+
+    private func open(url: URL) {
+        let controller = SFSafariViewController(url: url)
+        self.present(controller, animated: true, completion: nil)
     }
 }
