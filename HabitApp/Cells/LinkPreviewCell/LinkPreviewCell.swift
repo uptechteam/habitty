@@ -39,8 +39,10 @@ class LinkPreviewCell: UITableViewCell {
     }
 
     var url: URL!
-    func configure(with urlString: String) {
+    var tapHandler: ((URL) -> Void)?
+    func configure(with urlString: String, tapHandler: @escaping (URL) -> Void) {
         url = URL(string: urlString)!
+        self.tapHandler = tapHandler
         LinkPreviewService.shared.makeLinkPreview(from: urlString) { [weak self] linkPreview in
             guard let linkPreview = linkPreview else { return }
 
@@ -59,7 +61,7 @@ class LinkPreviewCell: UITableViewCell {
     }
 
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
-        UIApplication.shared.open(url)
+        tapHandler?(url)
     }
 
 }

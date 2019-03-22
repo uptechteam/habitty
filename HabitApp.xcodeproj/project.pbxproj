@@ -35,6 +35,8 @@
 		FDD5887D2244F8C3006B5B3B /* LinkPreviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD5887C2244F8C3006B5B3B /* LinkPreviewService.swift */; };
 		FDD588802244F8E0006B5B3B /* LinkPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD5887E2244F8E0006B5B3B /* LinkPreviewCell.swift */; };
 		FDD588812244F8E0006B5B3B /* LinkPreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDD5887F2244F8E0006B5B3B /* LinkPreviewCell.xib */; };
+		FDD58888224528DB006B5B3B /* morning_exercise.png in Resources */ = {isa = PBXBuildFile; fileRef = FDD58886224528DB006B5B3B /* morning_exercise.png */; };
+		FDD58889224528DB006B5B3B /* water.png in Resources */ = {isa = PBXBuildFile; fileRef = FDD58887224528DB006B5B3B /* water.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		FDD5887C2244F8C3006B5B3B /* LinkPreviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkPreviewService.swift; sourceTree = "<group>"; };
 		FDD5887E2244F8E0006B5B3B /* LinkPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkPreviewCell.swift; sourceTree = "<group>"; };
 		FDD5887F2244F8E0006B5B3B /* LinkPreviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LinkPreviewCell.xib; sourceTree = "<group>"; };
+		FDD58886224528DB006B5B3B /* morning_exercise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = morning_exercise.png; sourceTree = "<group>"; };
+		FDD58887224528DB006B5B3B /* water.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,8 @@
 		6A94099E2244E5E2005C67A1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FDD58886224528DB006B5B3B /* morning_exercise.png */,
+				FDD58887224528DB006B5B3B /* water.png */,
 				6A9409AF2244F281005C67A1 /* jedi.jpg */,
 				6A9409A12244E972005C67A1 /* johnny_cage.jpg */,
 				6A94099F2244E5F2005C67A1 /* healthy_guy.jpg */,
@@ -285,6 +291,7 @@
 				6A9409B02244F281005C67A1 /* jedi.jpg in Resources */,
 				1322FA5D2244ED5600401A98 /* ImageCell.xib in Resources */,
 				6A9409A02244E5F2005C67A1 /* healthy_guy.jpg in Resources */,
+				FDD58888224528DB006B5B3B /* morning_exercise.png in Resources */,
 				1322FA6E224506E500401A98 /* CelebrityView.xib in Resources */,
 				FDD588812244F8E0006B5B3B /* LinkPreviewCell.xib in Resources */,
 				1322FA6A2245058000401A98 /* CelebrityCell.xib in Resources */,
@@ -292,6 +299,7 @@
 				6A9409A22244E972005C67A1 /* johnny_cage.jpg in Resources */,
 				6A9409AA2244EF77005C67A1 /* ListViewController.storyboard in Resources */,
 				6A9409A62244EC63005C67A1 /* PreviewView.xib in Resources */,
+				FDD58889224528DB006B5B3B /* water.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
