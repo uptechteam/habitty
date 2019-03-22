@@ -37,5 +37,73 @@
                 }
             }
         ]
+    },
+    {
+        "name": "Tracking Your Finances",
+        "imageName": "finance_tracking.png",
+        "isImageLight": false,
+        "shortDescription": "It really is important to keep track of how you are spending your money",
+        "description": [{
+            "type": "text",
+            "value": "It is the first step to understanding how you are managing your money, and to taking control of your finances. It may seem like a lot of work when you first begin, but you can make it as simple or complicated as you want to. Tracking your expenses can help you stop **feeling like you have little to show for your hard work.**\n# Tracking Expenses Creates Financial Awareness\nThe real reason you track your expenses is to create financial awareness. If you don’t know where your money goes or how you spend it, you won’t know what habits you can change in order to make your money work for you. Even your **small daily expenses can make you blow your budget**. Those who become millionaires are aware of the money that they make and that they spend. True wealth is built as you spend less than you make and to do that you need to know what you are spending. If you want to build wealth, then you need to **stop wasting money**."
+        },
+        {
+            "type": "text",
+            "value": "# It Also Helps Identify Spending Issues\nTracking your spending can help you identify **serious spending issues**. You can also see if your **spending matched your priorities**. It is easier to make changes when you realize that you are not reaching your financial goals because you eat out every night. Tracking your spending allows you to see where your money is really going. It is essential if you want to understand your financial habits and make changes to them. It can help you realize when you need to stop spending, so you do not end up with a **financial hangover**.\n# Stick to Your Budget\nIt is also essential when you are trying to budget. If you do not track your money, then you will not know when to stop spending in a category. it does not need to take very much time each day, but if you consistently track your expenses, you will be able to get out of debt and make the necessary changes to finances. This will allow you to begin to build wealth and go after the things that you want out of life."
+        },
+        {
+            "type": "image",
+            "value": {
+                "name": "finances.jpg"
+            }
+        },
+        {
+            "type": "text",
+            "value": "# The Easy Way to Track Expenses\nAn easy way to track your expenses is to simply write down every penny that you spend and where you spent it in a notebook. You may want to make a page for each budget category or simply put the category next to the amount you spent. This gives you a quick look at where your money goes, although it may be more difficult to separate the money into categories or look at spending trends. It at least makes you more aware of where your money is going.\n# Make It Easier With an App or Software\nAnother really easy way to track your expenses is in any **financial software program**. The programs can show you fancy graphs and charts to illustrate your spending habits. It is simple to enter the purchases in a budget category at the same time you enter them in your checking account.\n\nYou can do this on a phone app, or with software that has the option to sync with the software on your computer. If you are married it really helps to choose an option that will sync your spending with your spouse's spending, so you don't end up overspending in one category."
+        },
+        {
+            "type": "link",
+            "value": "https://www.spendee.com"
+        },
+        {
+            "type": "link",
+            "value": "https://www.mint.com"
+        },
+        {
+            "type": "link",
+            "value": "https://goodbudget.com"
+        },
+        {
+            "type": "text",
+            "value": "# Work Together as a Couple\nIf you are in a relationship and have combined finances, you will need to find a way that you can both track your expenses. There are apps that allow you to track your spending when you are on the go. This can prevent you from spending from the same category at the same time and save your budget.\n\nIt is also helpful to have with you when you are out and need to check how much you have left in a specific category. This is more reliable than **trusting the balance at the ATM or online**, since not everything may have cleared yet, but if you track your expenses as you spend, you should be able to know exactly how much money you have left each month.\n# Keep Going Even When You Overspend\nWhen you overspend in a few categories, it can be tempting to stop and then try again next month. It is important to continue to track throughout the month so you can identify what you need to change and by how much. A budget is something that evolves over time to help you meet your needs and goals. Recognizing that you are overspending consistently in one area can help you know if you need to increase that category and cut in other areas."
+        },
+        {
+            "type": "celebrities",
+            "value": {
+                "title": "Who does track finances?",
+                "celebrities": [{
+                    "name": "Bill Gates",
+                    "imageName": "bill_gates.jpg",
+                    "url": "https://en.wikipedia.org/wiki/Bill_Gates"
+                },
+                {
+                    "name": "Warren Buffer",
+                    "imageName": "warren.jpg",
+                    "url": "https://en.wikipedia.org/wiki/Warren_Buffett"
+                },
+                {
+                    "name": "Elon Musk",
+                    "imageName": "musk.jpg",
+                    "url": "https://en.wikipedia.org/wiki/Elon_Musk"
+                },
+                {
+                    "name": "Mark Zuckerberg",
+                    "imageName": "marc.jpg",
+                    "url": "https://en.wikipedia.org/wiki/Mark_Zuckerberg"
+                }
+                ]
+            }
+        }
+        ]
     }
 ]

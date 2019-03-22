@@ -23,7 +23,8 @@ final class PreviewView: UIView {
     @IBOutlet private var imageLeadingConstraint: NSLayoutConstraint!
     @IBOutlet private var imageBottomConstraint: NSLayoutConstraint!
     @IBOutlet private var imageTrailingConstraint: NSLayoutConstraint!
-
+    @IBOutlet var dimView: UIView!
+    
     private(set) var viewItem: ViewItem?
     
     override func awakeFromNib() {
@@ -46,6 +47,7 @@ final class PreviewView: UIView {
         titleLabel.textColor = viewItem.isImageLight ? UIColor.darkText : .white
         descriptionLabel.text = viewItem.shortDescription
         descriptionLabel.textColor = viewItem.isImageLight ? UIColor.darkText : .white
+        dimView.isHidden = viewItem.isImageLight
     }
 
     func set(imageInsets: UIEdgeInsets) {
