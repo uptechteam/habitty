@@ -10,11 +10,23 @@ import UIKit
 import Down
 import SafariServices
 
-class DetailsTableViewController: UITableViewController {
+class DetailsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    private let tableView = UITableView()
     private let previewContainerView = UIView()
     private let previewView = PreviewView.makeNibInstance()
+    private let closeButton = UIButton()
     private var item: ViewItem!
     private var willAppear = false
+
+    private var isCloseButtonLight = true {
+        didSet {
+            if oldValue != isCloseButtonLight {
+                UIView.transition(with: closeButton, duration: 0.2, options: .transitionCrossDissolve, animations: {
+                    self.closeButton.setImage(self.isCloseButtonLight ? #imageLiteral(resourceName: "close_white") : #imageLiteral(resourceName: "close_black"), for: .normal)
+                }, completion: nil)
+            }
+        }
+    }
 
     override var prefersStatusBarHidden: Bool {
         return willAppear
@@ -25,8 +37,7 @@ class DetailsTableViewController: UITableViewController {
     }
 
     static func makeStoryboardInstance() -> DetailsTableViewController {
-        let storyboard = UIStoryboard(name: "DetailsTableViewController", bundle: nil)
-        return storyboard.instantiateInitialViewController() as! DetailsTableViewController
+        return DetailsTableViewController(nibName: nil, bundle: nil)
     }
 
     override func viewDidLoad() {
@@ -51,6 +62,15 @@ class DetailsTableViewController: UITableViewController {
     }
 
     private func setup() {
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(tableView)
+        view.addConstraints([
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+
         tableView.register(
             UINib(nibName: "ImageCell", bundle: nil),
             forCellReuseIdentifier: "ImageCell"
@@ -64,6 +84,7 @@ class DetailsTableViewController: UITableViewController {
             forCellReuseIdentifier: "LinkPreviewCell"
         )
         tableView.contentInsetAdjustmentBehavior = .never
+        tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
 
@@ -78,6 +99,16 @@ class DetailsTableViewController: UITableViewController {
             previewView.topAnchor.constraint(equalTo: previewContainerView.topAnchor),
             previewView.bottomAnchor.constraint(equalTo: previewContainerView.bottomAnchor)
         ])
+
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
+        closeButton.setImage(#imageLiteral(resourceName: "close_white"), for: .normal)
+        closeButton.addTarget(self, action: #selector(DetailsTableViewController.handleCloseTap), for: .touchUpInside)
+        closeButton.layer.zPosition = 100000
+        view.addSubview(closeButton)
+        view.addConstraints([
+            closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+            closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+        ])
     }
 
     func set(item: ViewItem) {
@@ -85,11 +116,11 @@ class DetailsTableViewController: UITableViewController {
         self.item = item
     }
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let item = self.item else {
             fatalError()
         }
@@ -97,7 +128,7 @@ class DetailsTableViewController: UITableViewController {
         return item.description.count
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let item = self.item else {
             fatalError()
         }
@@ -105,9 +136,18 @@ class DetailsTableViewController: UITableViewController {
         return cell(for: item.description[indexPath.row])
     }
 
-    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         previewView.transform = CGAffineTransform.identity
             .translatedBy(x: 0, y: min(0, scrollView.contentOffset.y - tableView.contentInset.top))
+
+        isCloseButtonLight = {
+            if item.isImageLight {
+                return false
+
+            } else {
+                return scrollView.contentOffset.y < (tableView.tableHeaderView?.frame.height ?? 0) - 20 - 14
+            }
+        }()
     }
 
     private func cell(for description: ViewItem.DescriptionItem) -> UITableViewCell {
@@ -161,6 +201,10 @@ class DetailsTableViewController: UITableViewController {
     private func open(url: URL) {
         let controller = SFSafariViewController(url: url)
         self.present(controller, animated: true, completion: nil)
+    }
+
+    @objc private func handleCloseTap() {
+        presentingViewController?.dismiss(animated: true, completion: nil)
     }
 }
 

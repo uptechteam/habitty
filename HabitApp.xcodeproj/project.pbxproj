@@ -10,7 +10,6 @@
 		1322FA5B2244ED1F00401A98 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1322FA5A2244ED1F00401A98 /* ImageCell.swift */; };
 		1322FA5D2244ED5600401A98 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1322FA5C2244ED5600401A98 /* ImageCell.xib */; };
 		1322FA5F2244EFD300401A98 /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1322FA5E2244EFD300401A98 /* DetailsTableViewController.swift */; };
-		1322FA622244F00400401A98 /* DetailsTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1322FA612244F00400401A98 /* DetailsTableViewController.storyboard */; };
 		1322FA682245056A00401A98 /* CelebrityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1322FA672245056A00401A98 /* CelebrityCell.swift */; };
 		1322FA6A2245058000401A98 /* CelebrityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1322FA692245058000401A98 /* CelebrityCell.xib */; };
 		1322FA6C224506D100401A98 /* CelebrityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1322FA6B224506D100401A98 /* CelebrityView.swift */; };
@@ -43,7 +42,6 @@
 		1322FA5A2244ED1F00401A98 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		1322FA5C2244ED5600401A98 /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
 		1322FA5E2244EFD300401A98 /* DetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewController.swift; sourceTree = "<group>"; };
-		1322FA612244F00400401A98 /* DetailsTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsTableViewController.storyboard; sourceTree = "<group>"; };
 		1322FA672245056A00401A98 /* CelebrityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrityCell.swift; sourceTree = "<group>"; };
 		1322FA692245058000401A98 /* CelebrityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CelebrityCell.xib; sourceTree = "<group>"; };
 		1322FA6B224506D100401A98 /* CelebrityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrityView.swift; sourceTree = "<group>"; };
@@ -193,7 +191,6 @@
 				FD1A45E72244DC4E004ABA4B /* Info.plist */,
 				6A94099C2244E1E9005C67A1 /* ViewItem.swift */,
 				1322FA5E2244EFD300401A98 /* DetailsTableViewController.swift */,
-				1322FA612244F00400401A98 /* DetailsTableViewController.storyboard */,
 			);
 			path = HabitApp;
 			sourceTree = "<group>";
@@ -284,7 +281,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1322FA622244F00400401A98 /* DetailsTableViewController.storyboard in Resources */,
 				FD1A45E62244DC4E004ABA4B /* LaunchScreen.storyboard in Resources */,
 				6A9409AE2244F047005C67A1 /* ListCell.xib in Resources */,
 				6A9409A02244E5F2005C67A1 /* healthy_guy.jpg in Resources */,
