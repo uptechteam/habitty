@@ -1,10 +1,16 @@
 h1 {
     font-family: "HelveticaNeue";
-    color: #333333;
+    font-size: 17pt;
+    color: #111111;
 }
 
 p {
     font-family: "HelveticaNeue";
     font-size: 12pt;
-    color: #333333;
+    color: #555555;
 }
+
+strong {
+    color: #111111;
+}
+

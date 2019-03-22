@@ -17,6 +17,9 @@ class CelebrityCell: UITableViewCell {
     func setup(title: String, celebrities: [(ViewItem.Celebrity, () -> Void)]) {
         titleLabel.text = title
 
+        scrollView.contentInset.left = 16
+        scrollView.contentInset.right = 16
+
         for view in stackView.subviews {
             view.removeFromSuperview()
         }

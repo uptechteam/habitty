@@ -13,31 +13,33 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="mPS-US-eBg" customClass="CelebrityView" customModule="HabitApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
+            <rect key="frame" x="0.0" y="0.0" width="90" height="213"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1UF-dJ-qmJ">
-                    <rect key="frame" x="49" y="119.5" width="42" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1UF-dJ-qmJ">
+                    <rect key="frame" x="0.0" y="95" width="90" height="118"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i0R-o6-tQD">
-                    <rect key="frame" x="0.0" y="0.0" width="140" height="111.5"/>
+                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="140" id="1Ts-1W-ORa"/>
-                        <constraint firstAttribute="height" constant="111.5" id="Xq1-s7-UPV"/>
+                        <constraint firstAttribute="width" constant="90" id="1Ts-1W-ORa"/>
+                        <constraint firstAttribute="height" constant="90" id="Xq1-s7-UPV"/>
                     </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98823529409999999" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="2Hv-3r-kUq" firstAttribute="trailing" secondItem="1UF-dJ-qmJ" secondAttribute="trailing" id="9Tn-aI-cgi"/>
                 <constraint firstItem="1UF-dJ-qmJ" firstAttribute="centerX" secondItem="mPS-US-eBg" secondAttribute="centerX" id="JKj-ci-mbx"/>
-                <constraint firstItem="i0R-o6-tQD" firstAttribute="leading" secondItem="mPS-US-eBg" secondAttribute="leading" id="QiX-cf-HoK"/>
-                <constraint firstItem="1UF-dJ-qmJ" firstAttribute="top" secondItem="i0R-o6-tQD" secondAttribute="bottom" constant="8" id="Tij-Ao-7Qv"/>
+                <constraint firstItem="i0R-o6-tQD" firstAttribute="leading" secondItem="2Hv-3r-kUq" secondAttribute="leading" id="RS9-bS-CFz"/>
+                <constraint firstItem="1UF-dJ-qmJ" firstAttribute="top" secondItem="i0R-o6-tQD" secondAttribute="bottom" constant="5" id="Tij-Ao-7Qv"/>
                 <constraint firstAttribute="trailing" secondItem="i0R-o6-tQD" secondAttribute="trailing" id="Y7K-Y6-K3z"/>
                 <constraint firstItem="1UF-dJ-qmJ" firstAttribute="bottom" secondItem="mPS-US-eBg" secondAttribute="bottom" id="hJR-RB-Iuw"/>
                 <constraint firstItem="i0R-o6-tQD" firstAttribute="top" secondItem="mPS-US-eBg" secondAttribute="top" id="jwi-fj-qJ1"/>
+                <constraint firstItem="1UF-dJ-qmJ" firstAttribute="leading" secondItem="2Hv-3r-kUq" secondAttribute="leading" id="qH2-ea-LC7"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="2Hv-3r-kUq"/>
@@ -45,7 +47,7 @@
                 <outlet property="imageView" destination="i0R-o6-tQD" id="tVf-3k-0B6"/>
                 <outlet property="label" destination="1UF-dJ-qmJ" id="gxf-dZ-fj6"/>
             </connections>
-            <point key="canvasLocation" x="-3.2000000000000002" y="-79.160419790104953"/>
+            <point key="canvasLocation" x="-3.2000000000000002" y="-33.733133433283363"/>
         </view>
     </objects>
 </document>

@@ -11,59 +11,60 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CelebrityCell" rowHeight="197" id="fxX-jS-MC7" customClass="CelebrityCell" customModule="HabitApp" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CelebrityCell" rowHeight="197" id="fxX-jS-MC7" customClass="CelebrityCell" customModule="HabitApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fxX-jS-MC7" id="R3s-iz-CJq">
                 <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jj6-Ec-4RT">
-                        <rect key="frame" x="16" y="11" width="42" height="32.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1g-xH-YT6">
-                        <rect key="frame" x="12" y="55.5" width="351" height="144"/>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1g-xH-YT6">
+                        <rect key="frame" x="0.0" y="59.5" width="375" height="140"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="g3g-zU-rQz">
-                                <rect key="frame" x="0.0" y="0.0" width="42" height="144"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="g3g-zU-rQz">
+                                <rect key="frame" x="0.0" y="0.0" width="42" height="140"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35m-nS-ehf">
-                                        <rect key="frame" x="0.0" y="0.0" width="42" height="144"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="144" id="bMk-Wu-Mqg"/>
+                                    <constraint firstAttribute="height" constant="140" id="bMk-Wu-Mqg"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="g3g-zU-rQz" secondAttribute="bottom" id="40E-hA-Tnx"/>
                             <constraint firstItem="g3g-zU-rQz" firstAttribute="top" secondItem="T1g-xH-YT6" secondAttribute="top" id="ClY-0h-Cnn"/>
-                            <constraint firstAttribute="height" constant="144" id="f4G-0O-vHi"/>
+                            <constraint firstAttribute="height" constant="140" id="f4G-0O-vHi"/>
                             <constraint firstItem="g3g-zU-rQz" firstAttribute="leading" secondItem="T1g-xH-YT6" secondAttribute="leading" id="gkn-Do-9UY"/>
                             <constraint firstAttribute="trailing" secondItem="g3g-zU-rQz" secondAttribute="trailing" id="pxi-Pe-4e0"/>
                         </constraints>
                     </scrollView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Itm-XG-ZGU">
+                        <rect key="frame" x="16" y="12" width="343" height="35.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="T1g-xH-YT6" secondAttribute="trailing" constant="12" id="Bkv-Kl-kHv"/>
-                    <constraint firstItem="Jj6-Ec-4RT" firstAttribute="leading" secondItem="R3s-iz-CJq" secondAttribute="leadingMargin" id="CFu-sM-csA"/>
-                    <constraint firstItem="T1g-xH-YT6" firstAttribute="leading" secondItem="R3s-iz-CJq" secondAttribute="leading" constant="12" id="K3P-Kv-0Pa"/>
+                    <constraint firstItem="T1g-xH-YT6" firstAttribute="top" secondItem="Itm-XG-ZGU" secondAttribute="bottom" constant="12" id="BNm-Wp-GGH"/>
+                    <constraint firstAttribute="trailing" secondItem="T1g-xH-YT6" secondAttribute="trailing" id="Bkv-Kl-kHv"/>
+                    <constraint firstItem="Itm-XG-ZGU" firstAttribute="leading" secondItem="R3s-iz-CJq" secondAttribute="leading" constant="16" id="Jns-40-Lwk"/>
+                    <constraint firstItem="T1g-xH-YT6" firstAttribute="leading" secondItem="R3s-iz-CJq" secondAttribute="leading" id="K3P-Kv-0Pa"/>
                     <constraint firstAttribute="bottom" secondItem="T1g-xH-YT6" secondAttribute="bottom" id="KB7-ZP-hX5"/>
-                    <constraint firstItem="T1g-xH-YT6" firstAttribute="top" secondItem="Jj6-Ec-4RT" secondAttribute="bottom" constant="12" id="fVD-5Y-zDH"/>
-                    <constraint firstItem="Jj6-Ec-4RT" firstAttribute="top" secondItem="R3s-iz-CJq" secondAttribute="topMargin" id="yMW-8x-Oba"/>
+                    <constraint firstAttribute="trailing" secondItem="Itm-XG-ZGU" secondAttribute="trailing" constant="16" id="N2u-UW-XGT"/>
+                    <constraint firstItem="Itm-XG-ZGU" firstAttribute="top" secondItem="R3s-iz-CJq" secondAttribute="top" constant="12" id="usP-uo-h4m"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="scrollView" destination="T1g-xH-YT6" id="KaZ-KB-ekE"/>
                 <outlet property="stackView" destination="g3g-zU-rQz" id="e9N-Kp-z9g"/>
-                <outlet property="titleLabel" destination="Jj6-Ec-4RT" id="c8r-7c-QE8"/>
+                <outlet property="titleLabel" destination="Itm-XG-ZGU" id="Qpt-cM-aqx"/>
             </connections>
             <point key="canvasLocation" x="-106.40000000000001" y="126.83658170914543"/>
         </tableViewCell>

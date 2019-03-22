@@ -95,6 +95,10 @@ class DetailsTableViewController: UIViewController, UITableViewDelegate, UITable
             UINib(nibName: "LinkPreviewCell", bundle: nil),
             forCellReuseIdentifier: "LinkPreviewCell"
         )
+        tableView.register(
+            UITableViewCell.self,
+            forCellReuseIdentifier: "TextCell"
+        )
         tableView.contentInsetAdjustmentBehavior = .never
         tableView.delegate = self
         tableView.dataSource = self
@@ -122,6 +126,8 @@ class DetailsTableViewController: UIViewController, UITableViewDelegate, UITable
             closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
             closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
         ])
+
+        updateCloseButton()
     }
 
     func set(item: ViewItem) {
@@ -146,69 +152,53 @@ class DetailsTableViewController: UIViewController, UITableViewDelegate, UITable
             fatalError()
         }
 
-        return cell(for: item.description[indexPath.row])
+        switch item.description[indexPath.row] {
+        case .text(let text):
+            let down = Down(markdownString: text)
+            let text = NSMutableAttributedString(attributedString: try! down.toAttributedString(stylesheet: styles))
+            text.replaceCharacters(in: NSRange(location: text.length - 1, length: 1), with: "")
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TextCell", for: indexPath)
+            cell.textLabel?.numberOfLines = 0
+            cell.textLabel?.attributedText = text
+            return cell
+
+        case .links(let title, let links):
+            let linkPreviewCell = tableView.dequeueReusableCell(withIdentifier: "LinkPreviewCell", for: indexPath) as! LinkPreviewCell
+            linkPreviewCell.configure(with: "https://itunes.apple.com/ua/app/the-sims-mobile/id1144258115?mt=8", tapHandler: self.open)
+            return linkPreviewCell
+
+        case .image(let imageName, let description):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ImageCell", for: indexPath) as! ImageCell
+            cell.setup(image: UIImage(named: imageName)!, text: description ?? "")
+            return cell
+
+        case .celebrities(let title, let celebrities):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CelebrityCell", for: indexPath) as! CelebrityCell
+            var celebritiesParam: [(ViewItem.Celebrity, () -> Void)] = []
+            for celebrity in celebrities {
+                celebritiesParam.append((celebrity, { self.open(url: celebrity.link) }))
+            }
+            cell.setup(title: title, celebrities: celebritiesParam)
+            return cell
+        }
+    }
+
+    fileprivate func updateCloseButton() {
+        isCloseButtonLight = {
+            if item.isImageLight {
+                return false
+
+            } else {
+                return tableView.contentOffset.y < (tableView.tableHeaderView?.frame.height ?? 0) - 20 - 14
+            }
+        }()
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         previewView.transform = CGAffineTransform.identity
             .translatedBy(x: 0, y: min(0, scrollView.contentOffset.y - tableView.contentInset.top))
 
-        isCloseButtonLight = {
-            if item.isImageLight {
-                return false
-
-            } else {
-                return scrollView.contentOffset.y < (tableView.tableHeaderView?.frame.height ?? 0) - 20 - 14
-            }
-        }()
-    }
-
-    private func cell(for description: ViewItem.DescriptionItem) -> UITableViewCell {
-        switch description {
-        case .text(let text):
-            return getTextCell(text: text)
-
-        case .links(let title, let links):
-            return getLinkCell(link: links.first ?? URL(string: "https://itunes.apple.com/ua/app/the-sims-mobile/id1144258115?mt=8")!)
-
-        case .image(let imageName, let description):
-            return getImageCell(image: imageName, description: description)
-
-        case .celebrities(let title, let celebrities):
-            return makeCelebritiesCell(title: title, celebrities: celebrities)
-        }
-    }
-
-    private func getTextCell(text: String) -> UITableViewCell {
-        let down = Down(markdownString: text)
-        let text = try! down.toAttributedString(stylesheet: styles)
-
-        let cell = UITableViewCell()
-        cell.textLabel?.numberOfLines = 0
-        cell.textLabel?.attributedText = text
-        return cell
-    }
-
-    private func getImageCell(image: String, description: String?) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ImageCell") as! ImageCell
-        cell.setup(image: UIImage(named: image)!, text: description ?? "")
-        return cell
-    }
-
-    private func getLinkCell(link: URL) -> UITableViewCell {
-        let linkPreviewCell = tableView.dequeueReusableCell(withIdentifier: "LinkPreviewCell") as! LinkPreviewCell
-        linkPreviewCell.configure(with: "https://itunes.apple.com/ua/app/the-sims-mobile/id1144258115?mt=8", tapHandler: self.open)
-        return linkPreviewCell
-    }
-
-    private func makeCelebritiesCell(title: String, celebrities: [ViewItem.Celebrity]) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CelebrityCell") as! CelebrityCell
-        var celebritiesParam: [(ViewItem.Celebrity, () -> Void)] = []
-        for celebrity in celebrities {
-            celebritiesParam.append((celebrity, { self.open(url: celebrity.link) }))
-        }
-        cell.setup(title: title, celebrities: celebritiesParam)
-        return cell
+        updateCloseButton()
     }
 
     private func open(url: URL) {

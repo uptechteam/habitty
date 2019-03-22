@@ -52,10 +52,6 @@ final class ListViewController: UIViewController {
 
         willAppear = false
     }
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-    }
 }
 
 extension ListViewController: UITableViewDataSource {

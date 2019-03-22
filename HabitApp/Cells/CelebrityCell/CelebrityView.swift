@@ -23,7 +23,15 @@ class CelebrityView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
 
+        imageView.clipsToBounds = true
+
         self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(CelebrityView.handleTap)))
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        imageView.layer.cornerRadius = imageView.frame.height / 2
     }
 
     func setup(image: UIImage, title: String, tapHandler: (() -> Void)?) {
