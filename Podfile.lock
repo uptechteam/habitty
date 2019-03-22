@@ -1,0 +1,20 @@
+PODS:
+  - Down (0.6.1)
+  - SwiftLinkPreview (2.3.1)
+
+DEPENDENCIES:
+  - Down
+  - SwiftLinkPreview
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Down
+    - SwiftLinkPreview
+
+SPEC CHECKSUMS:
+  Down: 8d305822b0a69c393cddaf1d21d2bb2e0b34d544
+  SwiftLinkPreview: 7fa103fdbf20f1644c23289dc5ebc01425d997ab
+
+PODFILE CHECKSUM: 7c681b49db2a35e38fb298b8c14d10f17464bee2
+
+COCOAPODS: 1.5.3
