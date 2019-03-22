@@ -19,7 +19,7 @@ final class ListCell: UITableViewCell {
 
     let previewView = PreviewView.makeNibInstance()
 
-    @IBOutlet private var previewContainerView: UIView!
+    @IBOutlet var previewContainerView: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

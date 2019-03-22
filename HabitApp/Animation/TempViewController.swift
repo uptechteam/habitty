@@ -11,6 +11,10 @@ import UIKit
 final class TempViewController: UIViewController {
     let previewView = PreviewView.makeNibInstance()
 
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,11 +28,32 @@ final class TempViewController: UIViewController {
             previewView.topAnchor.constraint(equalTo: view.topAnchor),
             previewView.heightAnchor.constraint(equalToConstant: 400)
         ])
+
+        view.addGestureRecognizer(
+            UITapGestureRecognizer(
+                target: self,
+                action: #selector(TempViewController.handleTap)
+            )
+        )
     }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
         previewView.set(safeAreaTopLength: view.safeAreaInsets.top)
+    }
+
+    @objc private func handleTap() {
+        presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension TempViewController: PreviewAnimatedTransitioningViewController {
+    var previewViewFrame: CGRect {
+        return previewView.frame
+    }
+
+    var previewViewItem: ViewItem? {
+        return previewView.viewItem
     }
 }

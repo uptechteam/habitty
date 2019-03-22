@@ -17,6 +17,8 @@ final class PreviewView: UIView {
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var descriptionLabel: UILabel!
     @IBOutlet private var titleTopConstraint: NSLayoutConstraint!
+
+    private(set) var viewItem: ViewItem?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,6 +29,7 @@ final class PreviewView: UIView {
     }
 
     func set(viewItem: ViewItem) {
+        self.viewItem = viewItem
         imageView.image = UIImage(named: viewItem.imageName)
         titleLabel.text = viewItem.name
         descriptionLabel.text = viewItem.shortDescription
