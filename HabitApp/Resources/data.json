@@ -1,0 +1,40 @@
+[
+    {
+        "name": "Drinking Enough Water",
+        "imageName": "water.png",
+        "shortDescription": "Drinking Enough Water Changes Your Body In These 5 Ways",
+        "description": [{
+                "type": "text",
+                "value": "Drinking enough water is important for the proper functioning of your body. Dehydration, caused by insufficient fluid intake, often results in noticeable changes to let you know that you should be reaching for a glass. <br><br>While the \"8 glasses a day\" rule is popular, the ideal intake level actually varies based on the individual. Here are five changes you can expect to see once you start the daily habit of drinking enough water:<br>**1. The color of your urine changes**"
+            },
+            {
+                "type": "link",
+                "value": "https://www.mayoclinic.org/diseases-conditions/urine-color/symptoms-causes/syc-20367333"
+            },
+            {
+                "type": "image",
+                "value": {
+                    "name": "water.png",
+                    "description": "Something something"
+                }
+            },
+            {
+                "type": "celebrities",
+                "value": {
+                    "title": "Who does this?",
+                    "celebrities": [{
+                        "name": "Celeb Guy",
+                        "imageName": "water.png",
+                        "url": "https://www.mayoclinic.org/diseases-conditions/urine-color/symptoms-causes/syc-20367333"
+                    },
+                    {
+                        "name": "Celeb Guy",
+                        "imageName": "water.png",
+                        "url": "https://www.mayoclinic.org/diseases-conditions/urine-color/symptoms-causes/syc-20367333"
+                    }
+                ]
+                }
+            }
+        ]
+    }
+]

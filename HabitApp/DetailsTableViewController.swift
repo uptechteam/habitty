@@ -68,8 +68,8 @@ class DetailsTableViewController: UITableViewController {
         case .text(let text):
             return getTextCell(text: text)
 
-        case .links(let title, let links):
-            return getLinkCell(link: links.first ?? URL(string: "https://itunes.apple.com/ua/app/the-sims-mobile/id1144258115?mt=8")!)
+        case .link(let link):
+            return getLinkCell(link: link)
 
         case .image(let imageName, let description):
             return getImageCell(image: imageName, description: description)
@@ -105,7 +105,7 @@ class DetailsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CelebrityCell") as! CelebrityCell
         var celebritiesParam: [(ViewItem.Celebrity, () -> Void)] = []
         for celebrity in celebrities {
-            celebritiesParam.append((celebrity, { self.open(url: celebrity.link) }))
+            celebritiesParam.append((celebrity, { self.open(url: celebrity.url) }))
         }
         cell.setup(title: title, celebrities: celebritiesParam)
         return cell
