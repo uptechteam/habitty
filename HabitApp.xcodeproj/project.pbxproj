@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1322FA5B2244ED1F00401A98 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1322FA5A2244ED1F00401A98 /* ImageCell.swift */; };
+		1322FA5D2244ED5600401A98 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1322FA5C2244ED5600401A98 /* ImageCell.xib */; };
+		1322FA5F2244EFD300401A98 /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1322FA5E2244EFD300401A98 /* DetailsTableViewController.swift */; };
+		1322FA622244F00400401A98 /* DetailsTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1322FA612244F00400401A98 /* DetailsTableViewController.storyboard */; };
 		6A94099D2244E1E9005C67A1 /* ViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A94099C2244E1E9005C67A1 /* ViewItem.swift */; };
 		6A9409A02244E5F2005C67A1 /* healthy_guy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6A94099F2244E5F2005C67A1 /* healthy_guy.jpg */; };
 		6A9409A22244E972005C67A1 /* johnny_cage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6A9409A12244E972005C67A1 /* johnny_cage.jpg */; };
@@ -18,6 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1322FA5A2244ED1F00401A98 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		1322FA5C2244ED5600401A98 /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
+		1322FA5E2244EFD300401A98 /* DetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewController.swift; sourceTree = "<group>"; };
+		1322FA612244F00400401A98 /* DetailsTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsTableViewController.storyboard; sourceTree = "<group>"; };
 		6A94099C2244E1E9005C67A1 /* ViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewItem.swift; sourceTree = "<group>"; };
 		6A94099F2244E5F2005C67A1 /* healthy_guy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = healthy_guy.jpg; sourceTree = "<group>"; };
 		6A9409A12244E972005C67A1 /* johnny_cage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = johnny_cage.jpg; sourceTree = "<group>"; };
@@ -46,16 +54,8 @@
 			children = (
 				1322FA552244EB7E00401A98 /* ImageCell */,
 				1322FA542244EB6800401A98 /* LinkPreviewCell */,
-				1322FA522244EB5300401A98 /* TextCell */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		1322FA522244EB5300401A98 /* TextCell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TextCell;
 			sourceTree = "<group>";
 		};
 		1322FA542244EB6800401A98 /* LinkPreviewCell */ = {
@@ -68,6 +68,8 @@
 		1322FA552244EB7E00401A98 /* ImageCell */ = {
 			isa = PBXGroup;
 			children = (
+				1322FA5A2244ED1F00401A98 /* ImageCell.swift */,
+				1322FA5C2244ED5600401A98 /* ImageCell.xib */,
 			);
 			path = ImageCell;
 			sourceTree = "<group>";
@@ -117,6 +119,8 @@
 				FD1A45E42244DC4E004ABA4B /* LaunchScreen.storyboard */,
 				FD1A45E72244DC4E004ABA4B /* Info.plist */,
 				6A94099C2244E1E9005C67A1 /* ViewItem.swift */,
+				1322FA5E2244EFD300401A98 /* DetailsTableViewController.swift */,
+				1322FA612244F00400401A98 /* DetailsTableViewController.storyboard */,
 			);
 			path = HabitApp;
 			sourceTree = "<group>";
@@ -179,7 +183,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1322FA622244F00400401A98 /* DetailsTableViewController.storyboard in Resources */,
 				FD1A45E62244DC4E004ABA4B /* LaunchScreen.storyboard in Resources */,
+				1322FA5D2244ED5600401A98 /* ImageCell.xib in Resources */,
 				6A9409A02244E5F2005C67A1 /* healthy_guy.jpg in Resources */,
 				FD1A45E32244DC4E004ABA4B /* Assets.xcassets in Resources */,
 				6A9409A22244E972005C67A1 /* johnny_cage.jpg in Resources */,
@@ -197,6 +203,8 @@
 				6A94099D2244E1E9005C67A1 /* ViewItem.swift in Sources */,
 				FD1A45DE2244DC4C004ABA4B /* ViewController.swift in Sources */,
 				FD1A45DC2244DC4C004ABA4B /* AppDelegate.swift in Sources */,
+				1322FA5F2244EFD300401A98 /* DetailsTableViewController.swift in Sources */,
+				1322FA5B2244ED1F00401A98 /* ImageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
