@@ -33,9 +33,14 @@ class DetailsTableViewController: UITableViewController {
             UINib(nibName: "CelebrityCell", bundle: nil),
             forCellReuseIdentifier: "CelebrityCell"
         )
+        tableView.register(
+            UINib(nibName: "LinkPreviewCell", bundle: nil),
+            forCellReuseIdentifier: "LinkPreviewCell"
+        )
 
         tableView.dataSource = self
         tableView.separatorStyle = .none
+
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -63,8 +68,8 @@ class DetailsTableViewController: UITableViewController {
         case .text(let text):
             return getTextCell(text: text)
 
-        case .links:
-            return UITableViewCell()
+        case .links(let title, let links):
+            return getLinkCell(link: links.first ?? URL(string: "https://itunes.apple.com/ua/app/the-sims-mobile/id1144258115?mt=8")!)
 
         case .image(let imageName, let description):
             return getImageCell(image: imageName, description: description)
@@ -88,6 +93,12 @@ class DetailsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ImageCell") as! ImageCell
         cell.setup(image: UIImage(named: image)!, text: description ?? "")
         return cell
+    }
+
+    private func getLinkCell(link: URL) -> UITableViewCell {
+        let linkPreviewCell = tableView.dequeueReusableCell(withIdentifier: "LinkPreviewCell") as! LinkPreviewCell
+        linkPreviewCell.configure(with: "https://itunes.apple.com/ua/app/the-sims-mobile/id1144258115?mt=8")
+        return linkPreviewCell
     }
 
     private func makeCelebritiesCell(title: String, celebrities: [ViewItem.Celebrity]) -> UITableViewCell {

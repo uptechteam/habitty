@@ -10,11 +10,11 @@ import Foundation
 import SwiftLinkPreview
 
 class LinkPreviewService {
-    private let swiftLinkPreview: SwiftLinkPreview
+    private let swiftLinkPreview = SwiftLinkPreview()
 
-    init(swiftLinkPreview: SwiftLinkPreview) {
-        self.swiftLinkPreview = swiftLinkPreview
-    }
+    static let shared = LinkPreviewService()
+
+    private init() {}
 
     func makeLinkPreview(from urlText: String, completion: @escaping (LinkPreview?) -> Void) {
         swiftLinkPreview.preview(urlText, onSuccess: { response in
