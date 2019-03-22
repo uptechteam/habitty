@@ -36,6 +36,7 @@
 		FDD588812244F8E0006B5B3B /* LinkPreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDD5887F2244F8E0006B5B3B /* LinkPreviewCell.xib */; };
 		FDD58888224528DB006B5B3B /* morning_exercise.png in Resources */ = {isa = PBXBuildFile; fileRef = FDD58886224528DB006B5B3B /* morning_exercise.png */; };
 		FDD58889224528DB006B5B3B /* water.png in Resources */ = {isa = PBXBuildFile; fileRef = FDD58887224528DB006B5B3B /* water.png */; };
+		FDD5888B22453177006B5B3B /* styles.css in Resources */ = {isa = PBXBuildFile; fileRef = FDD5888A22453177006B5B3B /* styles.css */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		FDD5887F2244F8E0006B5B3B /* LinkPreviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LinkPreviewCell.xib; sourceTree = "<group>"; };
 		FDD58886224528DB006B5B3B /* morning_exercise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = morning_exercise.png; sourceTree = "<group>"; };
 		FDD58887224528DB006B5B3B /* water.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water.png; sourceTree = "<group>"; };
+		FDD5888A22453177006B5B3B /* styles.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = styles.css; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 				6A9409AF2244F281005C67A1 /* jedi.jpg */,
 				6A9409A12244E972005C67A1 /* johnny_cage.jpg */,
 				6A94099F2244E5F2005C67A1 /* healthy_guy.jpg */,
+				FDD5888A22453177006B5B3B /* styles.css */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				6A9409B02244F281005C67A1 /* jedi.jpg in Resources */,
 				1322FA5D2244ED5600401A98 /* ImageCell.xib in Resources */,
 				6A9409A02244E5F2005C67A1 /* healthy_guy.jpg in Resources */,
+				FDD5888B22453177006B5B3B /* styles.css in Resources */,
 				FDD58888224528DB006B5B3B /* morning_exercise.png in Resources */,
 				1322FA6E224506E500401A98 /* CelebrityView.xib in Resources */,
 				FDD588812244F8E0006B5B3B /* LinkPreviewCell.xib in Resources */,

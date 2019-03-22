@@ -18,6 +18,10 @@ class DetailsTableViewController: UIViewController, UITableViewDelegate, UITable
     private var item: ViewItem!
     private var willAppear = false
 
+    private let styles = try! String(
+        contentsOfFile: Bundle.main.path(forResource: "styles", ofType: "css")!
+    )
+
     private var isCloseButtonLight = true {
         didSet {
             if oldValue != isCloseButtonLight {
@@ -168,7 +172,7 @@ class DetailsTableViewController: UIViewController, UITableViewDelegate, UITable
 
     private func getTextCell(text: String) -> UITableViewCell {
         let down = Down(markdownString: text)
-        let text = try! down.toAttributedString(stylesheet: css)
+        let text = try! down.toAttributedString(stylesheet: styles)
 
         let cell = UITableViewCell()
         cell.textLabel?.numberOfLines = 0
